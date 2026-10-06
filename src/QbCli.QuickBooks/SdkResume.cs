@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text;
 using QbCli.Core;
 
 namespace QbCli.QuickBooks;
@@ -14,23 +15,28 @@ public sealed record SdkResumePlan(string CompanyFile, string SourceDigest, SdkP
 /// <summary>Resubmit only requests proven not executed; never infer unknown writes failed.</summary>
 public static class SdkResume
 {
+    public const int MaximumJournalRecordBytes = 256 * 1024 * 1024;
     public static SdkResumePlan Read(string path, int batchSize = 50)
     {
         try
         {
-            var info = new FileInfo(path);
-            if (info.Length > 64 * 1024 * 1024) throw Usage("Resume journal exceeds the 64 MiB input limit.");
             // An incomplete JSON line is rejected, including a damaged final record.
-            return Build(File.ReadAllLines(path), batchSize);
+            // Execution history can exceed the typed input size. Keep only the
+            // current record and correlation state, not the whole journal text.
+            return Build(File.ReadLines(path), batchSize);
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or JsonException)
         { throw Usage("Resume journal could not be read as complete JSONL records."); }
     }
-    public static SdkResumePlan Build(IReadOnlyList<string> lines, int batchSize = 50)
+    public static SdkResumePlan Build(IEnumerable<string> lines, int batchSize = 50)
     {
-        if (lines.Count == 0 || lines.Any(string.IsNullOrWhiteSpace)) throw Usage("Resume requires a nonempty complete journal.");
+        using var records = lines.GetEnumerator();
+        if (!records.MoveNext()) throw Usage("Resume requires a nonempty complete journal.");
         JsonObject Parse(string line)
         {
+            if (string.IsNullOrWhiteSpace(line)) throw Usage("Resume requires a nonempty complete journal.");
+            if (line.Length > MaximumJournalRecordBytes || Encoding.UTF8.GetByteCount(line) > MaximumJournalRecordBytes)
+                throw Usage("Resume journal record exceeds the 256 MiB limit.");
             using var document = JsonDocument.Parse(line);
             void Unique(JsonElement element)
             {
@@ -44,10 +50,9 @@ public static class SdkResume
             Unique(document.RootElement);
             return JsonNode.Parse(line) as JsonObject ?? throw Usage("Journal records must be objects.");
         }
-        var records = lines.Select(Parse).ToArray();
         string Text(JsonObject value, string key) => value[key] is JsonValue v && v.TryGetValue<string>(out var s) ? s : throw Usage("Journal lacks required string " + key);
         int Number(JsonObject value, string key) => value[key] is JsonValue v && v.TryGetValue<int>(out var n) ? n : throw Usage("Journal lacks required integer " + key);
-        var header = records[0];
+        var header = Parse(records.Current);
         if (Text(header,"kind") != "plan" || Text(header,"executionScope") != "company") throw Usage("Resume supports current company-scoped SDK journals only.");
         SdkJournalProcessIdentity? sourceProcess = null;
         string sourceProcessState = "legacy_unknown";
@@ -76,8 +81,9 @@ public static class SdkResume
         var batches = SdkBatch.Messages(prepared);
         int submittedBatch = -1;
         bool finished = false;
-        foreach(var record in records.Skip(1))
+        while(records.MoveNext())
         {
+            var record = Parse(records.Current);
             string kind = Text(record,"kind");
             if (finished)
             {

@@ -9,6 +9,42 @@ namespace QbCli.Tests;
 
 public class SdkResumeTests
 {
+    [Fact] public void ReadsExecutionHistoryLargerThanTypedInputWithoutReplayingCompletedRows()
+    {
+        var lines=Journal(i=>i==1?3100:0);
+        var path=Path.GetTempFileName();
+        try
+        {
+            // Valid JSON whitespace makes this a genuine >64 MiB file without
+            // inventing outcomes or weakening identity/digest checks.
+            using(var writer=new StreamWriter(path,false,new System.Text.UTF8Encoding(false)))
+            {
+                var padding=new string(' ',70*1024*1024/lines.Length+1);
+                foreach(var line in lines){writer.Write(line);writer.Write(padding);writer.WriteLine();}
+            }
+            Assert.True(new FileInfo(path).Length>64*1024*1024);
+            var resume=SdkResume.Read(path);
+            Assert.Equal(["1"],resume.ConfirmedCompleted);
+            Assert.Equal(["2"],resume.FailedExcluded);
+            Assert.Equal("3",Assert.Single(resume.PendingPlan.Requests).RequestId);
+            Assert.True(resume.CanApply);
+        }
+        finally{File.Delete(path);}
+    }
+    [Fact] public void RejectsBadHeaderBeforeEnumeratingLaterRecords()
+    {
+        IEnumerable<string> Records()
+        {
+            yield return "{\"kind\":\"outcome\",\"executionScope\":\"company\"}";
+            throw new InvalidOperationException("Later records must not be read before header validation.");
+        }
+        Assert.Throws<QbException>(()=>SdkResume.Build(Records()));
+    }
+    [Fact] public void StreamingRejectsBlankLaterRecords()
+    {
+        var lines=Journal(_=>0);
+        Assert.Throws<QbException>(()=>SdkResume.Build(lines.Append(" ")));
+    }
     private static string[] Journal(Func<int,int> status, bool uncertain = false, bool includeProcess = false)
     {
         var plan = new SdkPlan("13.0","US","stopOnError",Enumerable.Range(1,3).Select(i => new SdkCall(i.ToString(),"ClassAdd",new() { ["ClassAdd"] = new JsonObject { ["Name"] = "Class"+i } })).ToArray(),1);

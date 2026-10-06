@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <AssemblyName>qbcli-callback</AssemblyName>
-    <Version>0.8.39</Version>
+    <Version>0.8.40</Version>
     <Product>qbcli callback receiver by McMurry Software</Product>
     <Description>Independent SDK event receiver by McMurry Software. Not developed, sponsored or endorsed by Intuit.</Description>
   </PropertyGroup>

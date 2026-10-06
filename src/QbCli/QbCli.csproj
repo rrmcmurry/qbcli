@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <AssemblyName>qbcli</AssemblyName>
-    <Version>0.8.39</Version>
+    <Version>0.8.40</Version>
     <Product>qbcli by McMurry Software</Product>
     <Description>Independent QuickBooks Desktop CLI by McMurry Software. Not developed, sponsored, or endorsed by Intuit.</Description>
   </PropertyGroup>

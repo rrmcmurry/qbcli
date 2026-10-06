@@ -1,7 +1,7 @@
 {
   "product": {
     "name": "qbcli",
-    "version": "0.8.39",
+    "version": "0.8.40",
     "publisher": "McMurry Software",
     "tagline": "Keep QuickBooks. Make it scriptable.",
     "affiliation": "Independent software. Not developed, sponsored, or endorsed by Intuit. McMurry Software is not affiliated with Intuit.",
