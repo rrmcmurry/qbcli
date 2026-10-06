@@ -1,0 +1,696 @@
+{
+  "product": {
+    "name": "qbcli",
+    "version": "0.8.39",
+    "publisher": "McMurry Software",
+    "tagline": "Keep QuickBooks. Make it scriptable.",
+    "affiliation": "Independent software. Not developed, sponsored, or endorsed by Intuit. McMurry Software is not affiliated with Intuit.",
+    "sdkAuthorizationName": "McMurry Software QuickBooks CLI"
+  },
+  "guidance": {
+    "bootstrap": "Run qbcli capabilities once and retain this entire contract. Commands are executable; sdkCatalog entries marked schema_validated_interface are available through sdk run/batch using sdkReference fields. Schema availability is not live verification. not_implemented entries have no callable schema.",
+    "transport": "Local executable, argument array preferred; quote spaces in shell values. JSON stdout is one document, diagnostics stderr. No MCP server is implemented.",
+    "selection": "Company operations use an open company or an explicit absolute .QBW path; applied company mutations require a path. Subscription operations are installation-scoped and forbid --company-file.",
+    "authorization": "Every session requests the same full profile: read/write, personal-data access and unattended access required. The administrator grants this once per company to the stable McMurry Software QuickBooks CLI identity; choose always allow access. Mutations still require --apply and an explicit company path. Do not force the dialog on every session. On the tested PC the permission help link had to be opened before the confirmation field accepted yes.",
+    "protocol": "Company/account/customer/vendor convenience queries use qbXML6.0; normalized invoice/bill, transaction-history and financial-report commands use13.0 with host country/protocol checks. Schema-driven requests default13.0. Imported legacy OSR plus selected documented SDK14/16 supplements can be submitted through17.0. Unimported newer fields remain rejected. Host support is checked before execution.",
+    "limits": {
+      "pageSizeDefault": 500,
+      "pageSizeMinimum": 1,
+      "pageSizeMaximum": 1000,
+      "partyOutputRecordLimit": 1000000,
+      "xmlResponseCharactersMaximum": 33554432,
+      "streaming": false,
+      "find": "Retrieves every page in one session, then filters full names locally. Large lists consume memory; page size bounds each SDK response, not total JSON output."
+    },
+    "sdkStatusMessages": "Per-request statusMessage preserves SDK diagnostics in JSON result data and write journals; it may contain company values. Stderr diagnostics omit these messages. Consult it for feature prerequisites and edit conflicts."
+  },
+  "commands": [
+    {
+      "name": "events register",
+      "usage": "qbcli events register --input server-settings.json --company-file PATH [--apply]",
+      "sdkOperations": [],
+      "requiresConnection": false,
+      "mutatesCompany": false,
+      "outputSchema": "CallbackServerRegistrationResult",
+      "examples": [
+        "qbcli events register --input server-settings.json --company-file C:\\Test\\Test.QBW --apply"
+      ],
+      "semantics": "Experimental preview/apply fresh owned persistent current-user COM registration for packaged qbcli-callback.exe. Settings: callbackClsid fresh braced GUID, durationSeconds1..43200, existing absolute journalDirectory. No subscriptions or company requests. Directly launched bounded windowless receivers passed synthetic callbacks; native COM auto-launch currently fails with 0x80040154 on the tested PC. DeliverAlways and actual QuickBooks delivery remain unverified. Each receiver activation creates a new journal and accepts only the exact scoped company. Never overwrites an identity. Cleanup only after receiver stops, through events cleanup."
+    },
+    {
+      "name": "transactions list",
+      "usage": "qbcli transactions list [--since YYYY-MM-DD] [--until YYYY-MM-DD] [--page-size 500] [--company-file PATH] [--json]",
+      "sdkOperations": [
+        "HostQuery",
+        "CompanyQuery",
+        "TransactionQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "TransactionsResult",
+      "examples": [
+        "qbcli transactions list --since 2026-01-01 --json"
+      ],
+      "semantics": "Complete SDK SummaryOnly iterator with inclusive transaction-date cutoffs; ordered date/type/ID summaries. SDK permission/feature filters apply and TimeTracking is excluded. No posting-line detail, amount aggregation or currency inference. Fresh independent SDK comparisons passed on Test.QBW; see scoped live-coverage checks. Other editions, permissions and releases remain unverified."
+    },
+    {
+      "name": "transactions search",
+      "usage": "qbcli transactions search --memo TEXT [--since YYYY-MM-DD] [--until YYYY-MM-DD] [--page-size 500] [--company-file PATH] [--json]",
+      "sdkOperations": [
+        "HostQuery",
+        "CompanyQuery",
+        "TransactionQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "TransactionsResult",
+      "examples": [
+        "qbcli transactions search --memo insurance --json"
+      ],
+      "semantics": "Retrieve every date-selected SummaryOnly page, normalize all records then filter summary memos using ordinal case-insensitive substring matching. scannedRecords describes the full selected query before memo filtering. No item/expense/group-line description search. Same SDK permission/feature and TimeTracking limits as transactions list. Fresh independent SDK comparisons passed on Test.QBW; see scoped live-coverage checks. Other editions, permissions and releases remain unverified."
+    },
+    {
+      "name": "reports trial-balance",
+      "usage": "qbcli reports trial-balance --as-of YYYY-MM-DD [--basis accrual|cash] [--company-file PATH] [--json]",
+      "sdkOperations": [
+        "HostQuery",
+        "CompanyQuery",
+        "GeneralSummaryReportQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "FinancialReportResult",
+      "examples": [
+        "qbcli reports trial-balance --as-of 2026-10-05 --json"
+      ],
+      "semantics": "TrialBalance, explicit end date, default accrual, ReturnRows/Columns=All, DisplayReport=false. Preserve column titles and row kinds/order, sparse cells and exact values. Complete only after declared dimensions and identities match. Fresh independent SDK comparisons passed on Test.QBW; see scoped live-coverage checks. Other editions, permissions and releases remain unverified."
+    },
+    {
+      "name": "reports profit-loss",
+      "usage": "qbcli reports profit-loss --from YYYY-MM-DD --to YYYY-MM-DD [--basis accrual|cash] [--company-file PATH] [--json]",
+      "sdkOperations": [
+        "HostQuery",
+        "CompanyQuery",
+        "GeneralSummaryReportQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "FinancialReportResult",
+      "examples": [
+        "qbcli reports profit-loss --from 2026-01-01 --to 2026-12-31 --json"
+      ],
+      "semantics": "ProfitAndLossStandard, explicit inclusive period, default accrual, ReturnRows/Columns=All, DisplayReport=false. Preserve column titles and row kinds/order, sparse cells and exact values. Complete only after declared dimensions and identities match. Fresh independent SDK comparisons passed on Test.QBW; see scoped live-coverage checks. Other editions, permissions and releases remain unverified."
+    },
+    {
+      "name": "reports balance-sheet",
+      "usage": "qbcli reports balance-sheet --as-of YYYY-MM-DD [--basis accrual|cash] [--company-file PATH] [--json]",
+      "sdkOperations": [
+        "HostQuery",
+        "CompanyQuery",
+        "GeneralSummaryReportQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "FinancialReportResult",
+      "examples": [
+        "qbcli reports balance-sheet --as-of 2026-10-05 --json"
+      ],
+      "semantics": "BalanceSheetStandard, explicit end date, default accrual, ReturnRows/Columns=All, DisplayReport=false. Preserve column titles and row kinds/order, sparse cells and exact values. Complete only after declared dimensions and identities match. Fresh independent SDK comparisons passed on Test.QBW; see scoped live-coverage checks. Other editions, permissions and releases remain unverified."
+    },
+    {
+      "name": "invoices list",
+      "usage": "qbcli invoices list [--open] [--page-size 500] [--company-file PATH] [--file-mode any] [--json]",
+      "sdkOperations": [
+        "HostQuery",
+        "CompanyQuery",
+        "InvoiceQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "DocumentsResult",
+      "examples": [
+        "qbcli invoices list --open --json"
+      ],
+      "semantics": "Read all iterator pages; --open uses PaidStatus=NotPaidOnly, including partially paid invoices. Summary records only; no lines or links. Remaining amount is BalanceRemaining, nullable when omitted. Sort ordinal date, number, ID. Country/protocol and explicit company are verified. All/open summaries and one-record pagination matched independent SDK reads on Test.QBW; partial-payment fixtures and other editions/releases remain unverified."
+    },
+    {
+      "name": "bills list",
+      "usage": "qbcli bills list [--open] [--page-size 500] [--company-file PATH] [--file-mode any] [--json]",
+      "sdkOperations": [
+        "HostQuery",
+        "CompanyQuery",
+        "BillQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "DocumentsResult",
+      "examples": [
+        "qbcli bills list --open --json"
+      ],
+      "semantics": "Read all iterator pages; --open uses PaidStatus=NotPaidOnly, including partially paid bills. Summary records only; no lines or links. Remaining amount is OpenAmount, nullable when omitted; original AmountDue is never substituted. Sort ordinal date, number, ID. Country/protocol and explicit company are verified. All/open summaries and one-record pagination matched independent SDK reads on Test.QBW; partial-payment fixtures and other editions/releases remain unverified."
+    },
+    {
+      "name": "sdk schema",
+      "usage": "qbcli sdk schema OPERATION",
+      "sdkOperations": [],
+      "requiresConnection": false,
+      "mutatesCompany": false,
+      "outputSchema": "SdkSchema",
+      "examples": [
+        "qbcli sdk schema InvoiceAdd"
+      ],
+      "semantics": "Offline structural request/response fields, types, choices, order, cardinality and country/version requirements. No XML input."
+    },
+    {
+      "name": "sdk validate",
+      "usage": "qbcli sdk validate OPERATION [--input fields.json] [--protocol 13.0] [--country US]",
+      "sdkOperations": [],
+      "requiresConnection": false,
+      "mutatesCompany": false,
+      "outputSchema": "SdkPreview",
+      "examples": [
+        "qbcli sdk validate CustomerQuery"
+      ],
+      "semantics": "Validate all supplied fields before any connection. Emit a plan digest and preview; not a server-side dry run."
+    },
+    {
+      "name": "sdk run",
+      "usage": "qbcli sdk run OPERATION [--input fields.json] [--protocol 13.0] [--country US] [--company-file PATH] [--all --page-size 500] [--apply] [--journal NEWFILE]",
+      "sdkOperations": [],
+      "requiresConnection": "queries and applied mutations",
+      "mutatesCompany": "only with --apply for accounting/list operations; recovery and UI effects are separate",
+      "outputSchema": "SdkExecution",
+      "examples": [
+        "qbcli sdk run ClassQuery --company-file C:\\QbCliTest\\Test.QBW"
+      ],
+      "semantics": "Execute one schema-validated request. Non-query operations preview by default. Apply requires an explicit company path; host country/protocol and actual file are checked first. No automatic retry."
+    },
+    {
+      "name": "sdk batch",
+      "usage": "qbcli sdk batch --input plan.json [--batch-size 50] [--company-file PATH] [--apply] [--journal NEWFILE]",
+      "sdkOperations": [],
+      "requiresConnection": "read batches and applied mutation batches",
+      "mutatesCompany": "only with --apply when the plan includes accounting/list operations; recovery and UI effects are separate",
+      "outputSchema": "SdkExecutionOrPreview",
+      "examples": [
+        "qbcli sdk batch --input plan.json"
+      ],
+      "semantics": "Validate the entire plan before connection. Reuse one STA session, split by count and UTF-8 byte limits, correlate responses by requestId. Stop before subsequent batches after an error/warning/unknown result. No rollback."
+    },
+    {
+      "name": "help",
+      "usage": "qbcli help",
+      "sdkOperations": [],
+      "requiresConnection": false,
+      "mutatesCompany": false,
+      "outputSchema": "Help",
+      "examples": [
+        "qbcli help"
+      ],
+      "semantics": null
+    },
+    {
+      "name": "capabilities",
+      "usage": "qbcli capabilities [--live] [--company-file PATH] [--verbose]",
+      "sdkOperations": [
+        "HostQuery",
+        "CompanyQuery",
+        "PreferencesQuery"
+      ],
+      "requiresConnection": "only_with_live",
+      "mutatesCompany": false,
+      "outputSchema": "Discovery",
+      "examples": [
+        "qbcli capabilities"
+      ],
+      "semantics": "Always JSON. Offline by default; --live adds host, supported qbXML versions, company, actual company path and an optional read-only PreferencesQuery snapshot of selected feature/access flags. Missing, malformed or duplicate flags stay unknown. Preference flags do not prove individual SDK request availability or write permission. No preferences are modified."
+    },
+    {
+      "name": "diagnostics",
+      "usage": "qbcli diagnostics [--json]",
+      "sdkOperations": [],
+      "requiresConnection": false,
+      "mutatesCompany": false,
+      "outputSchema": "Diagnostics",
+      "examples": [
+        "qbcli diagnostics"
+      ],
+      "semantics": null
+    },
+    {
+      "name": "company info",
+      "usage": "qbcli company info [--company-file PATH] [--json] [--verbose]",
+      "sdkOperations": [
+        "CompanyQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "Company",
+      "examples": [
+        "qbcli company info"
+      ],
+      "semantics": null
+    },
+    {
+      "name": "accounts list",
+      "usage": "qbcli accounts list [--company-file PATH] [--json] [--verbose]",
+      "sdkOperations": [
+        "AccountQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "Accounts",
+      "examples": [
+        "qbcli accounts list"
+      ],
+      "semantics": "All records including inactive. Customer/vendor results are complete across all iterator pages."
+    },
+    {
+      "name": "customers list",
+      "usage": "qbcli customers list [--company-file PATH] [--json] [--verbose] [--page-size 1..1000]",
+      "sdkOperations": [
+        "CustomerQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "Parties",
+      "examples": [
+        "qbcli customers list --json --page-size 500"
+      ],
+      "semantics": "All records including inactive. Customer/vendor results are complete across all iterator pages."
+    },
+    {
+      "name": "customers find",
+      "usage": "qbcli customers find \"TEXT\" [--company-file PATH] [--json] [--verbose] [--page-size 1..1000]",
+      "sdkOperations": [
+        "CustomerQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "Parties",
+      "examples": [
+        "qbcli customers find \"Rental\" --json"
+      ],
+      "semantics": "Case-insensitive substring of full name, including customer jobs; scans all iterator pages before filtering."
+    },
+    {
+      "name": "customers get",
+      "usage": "qbcli customers get (--id ID | --name \"EXACT FULL NAME\") [--company-file PATH] [--json] [--verbose]",
+      "sdkOperations": [
+        "CustomerQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "Parties",
+      "examples": [
+        "qbcli customers get --name \"RentalA\" --json"
+      ],
+      "semantics": "Exact ListID or case-insensitive exact full name. Zero matches is not_found; multiple matches is ambiguous_match."
+    },
+    {
+      "name": "vendors list",
+      "usage": "qbcli vendors list [--company-file PATH] [--json] [--verbose] [--page-size 1..1000]",
+      "sdkOperations": [
+        "VendorQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "Parties",
+      "examples": [
+        "qbcli vendors list --json --page-size 500"
+      ],
+      "semantics": "All records including inactive. Customer/vendor results are complete across all iterator pages."
+    },
+    {
+      "name": "vendors find",
+      "usage": "qbcli vendors find \"TEXT\" [--company-file PATH] [--json] [--verbose] [--page-size 1..1000]",
+      "sdkOperations": [
+        "VendorQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "Parties",
+      "examples": [
+        "qbcli vendors find \"Rental\" --json"
+      ],
+      "semantics": "Case-insensitive substring of full name, including customer jobs; scans all iterator pages before filtering."
+    },
+    {
+      "name": "vendors get",
+      "usage": "qbcli vendors get (--id ID | --name \"EXACT FULL NAME\") [--company-file PATH] [--json] [--verbose]",
+      "sdkOperations": [
+        "VendorQuery"
+      ],
+      "requiresConnection": true,
+      "mutatesCompany": false,
+      "outputSchema": "Parties",
+      "examples": [
+        "qbcli vendors get --name \"RentalA\" --json"
+      ],
+      "semantics": "Exact ListID or case-insensitive exact full name. Zero matches is not_found; multiple matches is ambiguous_match."
+    },
+    {
+      "name": "sdk subscription",
+      "usage": "qbcli sdk subscription OPERATION [--input fields.json] [--apply] [--journal NEWFILE]",
+      "sdkOperations": [],
+      "requiresConnection": "queries and applied subscription changes; no company session",
+      "mutatesCompany": false,
+      "outputSchema": "SdkExecutionOrPreview",
+      "examples": [],
+      "semantics": "Installation-scoped ProcessSubscription; no company-file option. Typed schemas, apply intent and durable journals required for changes. Callback server registration/lifetime is an external prerequisite."
+    },
+    {
+      "name": "sdk subscription-batch",
+      "usage": "qbcli sdk subscription-batch --input plan.json [--apply] [--journal NEWFILE]",
+      "sdkOperations": [],
+      "requiresConnection": "queries and applied subscription changes; no company session",
+      "mutatesCompany": false,
+      "outputSchema": "SdkExecutionOrPreview",
+      "examples": [],
+      "semantics": "Installation-scoped ProcessSubscription; no company-file option. Typed schemas, apply intent and durable journals required for changes. Callback server registration/lifetime is an external prerequisite."
+    },
+    {
+      "name": "bulk reclassify",
+      "usage": "qbcli bulk reclassify --input selection.json --company-file PATH [--apply] [--batch-size 50] [--page-size 500] [--journal NEWFILE]",
+      "sdkOperations": [],
+      "requiresConnection": true,
+      "mutatesCompany": true,
+      "outputSchema": "ReclassificationResult",
+      "examples": [
+        "qbcli bulk reclassify --input selection.json --company-file C:\\Test\\Test.QBW"
+      ],
+      "semantics": "Exact account ListID and blank-class selection. Input accountId,classId,optional transactionTypes. Default Check,Bill,CreditCardCharge,CreditCardCredit,VendorCredit,ItemReceipt,JournalEntry,Deposit. The six purchase types also select confirmed service/non-inventory/other-charge single-posting item leaves, combining item and expense classes into one retained modifier. Explicit Invoice,SalesReceipt,CreditMemo support confirmed service/non-inventory/other-charge single-posting items and inventory revenue lines: complete forms, item-kind identities, all account types and actual posting joins. Inventory requires one Income, OtherCurrentAsset and CostOfGoodsSold posting with balanced asset/COGS amounts; only the revenue account may select its class. Retain every flat/group leaf, actual override and existing class. Missing/extra/unknown/ambiguous postings, amount mismatches or unsupported retained items abort before writes. Preview defaults; apply freshly re-reads/plans, one Mod per transaction and fresh EditSequence. Existing deposit links are retained without resubmitting PaymentTxnID. Fresh form/posting read-back verifies preservation. Purchase inventory, inventory COGS/asset class selection, assemblies, nonposting items, headers and cash-back remain outside scope; purchase PO links, already-billed allocations and billable group children remain unverified; flat Billable customer fields have scoped preservation evidence. Non-atomic journals; no automatic uncertain-write replay."
+    },
+    {
+      "name": "sdk resume",
+      "usage": "qbcli sdk resume --input prior.jsonl --company-file PATH [--apply] [--journal NEWFILE] [--batch-size 50]",
+      "sdkOperations": [],
+      "requiresConnection": false,
+      "mutatesCompany": "depends on residual plan; only with --apply for accounting/list operations",
+      "outputSchema": "SdkResumeResult",
+      "examples": [
+        "qbcli sdk resume --input artifacts/runs/prior.jsonl --company-file C:\\Test\\Test.QBW"
+      ],
+      "semantics": "Offline preview validates the saved plan digest and submission records. Skips confirmed completions; excludes failed requests; only never-submitted or SDK-acknowledged 3231 requests become residual work. Unknown/warning submissions block apply. New journals record originating PID and round-trip UTC start time. A matching live process or failed lifetime observation blocks apply even after finished. A reused PID with a different start time is not that originating process. Compatible legacy journals report legacy_unknown and retain prior behavior plus the SDK session mutex, without claiming process exit. Apply uses the original company and protocol with a new journal. Self-contained pending macro chains can define fresh macros; references to completed/failed definitions and recovery-ID journals are rejected. Truncated or older incomplete journal formats are rejected."
+    },
+    {
+      "name": "events listen",
+      "usage": "qbcli events listen --input settings.json --company-file PATH --journal NEWFILE [--apply]",
+      "sdkOperations": [
+        "QBXMLEvents"
+      ],
+      "requiresConnection": false,
+      "mutatesCompany": false,
+      "outputSchema": "EventListenerOrPreview",
+      "examples": [
+        "qbcli events listen --input listener.json --company-file C:\\Test\\Test.QBW --journal events.jsonl"
+      ],
+      "semantics": "Windows STA COM receiver. Settings: callbackClsid braced fresh GUID, durationSeconds1..43200, optional registerCallback boolean. Temporary current-user CLSID registration previews unless --apply, refuses existing identities and is removed on normal exit. Use DeliverOnlyIfRunning. Creates no SDK subscription. Captures only exact-company QBXMLEvents to durable JSONL; stdout is one summary at exit. Callback never invokes SDK. Abnormal exit can leave an owned registration; events cleanup requires matching company scope and a stopped listener."
+    },
+    {
+      "name": "events cleanup",
+      "usage": "qbcli events cleanup --input identity.json --company-file PATH [--apply]",
+      "sdkOperations": [],
+      "requiresConnection": false,
+      "mutatesCompany": false,
+      "outputSchema": "EventCleanupResult",
+      "examples": [
+        "qbcli events cleanup --input identity.json --company-file C:\\Test\\Test.QBW --apply"
+      ],
+      "semantics": "Input only callbackClsid. Preview/default or explicit apply to remove a stopped qbcli-owned temporary current-user registration with matching company scope. Refuses other COM registrations and live listener identities. Does not modify SDK subscriptions."
+    }
+  ],
+  "options": {
+    "--since": "transactions list/search: optional inclusive transaction-date start yyyy-MM-dd; not modification time.",
+    "--until": "transactions list/search: optional inclusive transaction-date end yyyy-MM-dd; no earlier than --since.",
+    "--memo": "transactions search: required nonempty summary-memo substring, ordinal case-insensitive; filtered after complete retrieval.",
+    "--from": "reports profit-loss: required inclusive start date yyyy-MM-dd.",
+    "--to": "reports profit-loss: required inclusive end date yyyy-MM-dd, no earlier than --from.",
+    "--as-of": "reports trial-balance/balance-sheet: required yyyy-MM-dd ending date. No implicit SDK date period.",
+    "--basis": "Financial report commands: accrual (default) or cash. Requested basis is in selection; actual report basis is separately returned.",
+    "--open": "invoices list and bills list: SDK unpaid filter includes partially paid documents. Without it, query all paid statuses.",
+    "--file-mode": "Company SDK sessions: any (default), single-user or multi-user. Configures BeginSession; cannot switch an already-open company's mode. Requested mode is separate from connection.host.fileMode reported by HostQuery. Offline previews do not connect. Rejected on offline discovery/validation, subscriptions and event listeners.",
+    "--json": "Machine JSON results/errors; capabilities and diagnostics always emit JSON.",
+    "--verbose": "Timing and lifecycle diagnostics to stderr; no raw company data.",
+    "--company-file": "Absolute .QBW path; required for applied mutations. capabilities requires --live.",
+    "--live": "capabilities only; connect and probe HostQuery + CompanyQuery, then selected read-only PreferencesQuery feature/access flags in the same session.",
+    "--page-size": "Customer/vendor list/find, invoice/bill list, transaction list/search, bulk reclassify or sdk run --all; integer 1..1000, default500. Bounds each response, not final buffered output.",
+    "--id": "Customer/vendor get only; exactly one selector.",
+    "--name": "Customer/vendor get only; exact full name, including job ancestry.",
+    "--input": "SDK commands: strict JSON fields file, or complete batch plan file. Event commands: listener settings or cleanup identity; SDK resume: JSONL journal.",
+    "--apply": "Company mutations: explicit write intent plus company path. Subscription mutations: explicit intent to change installation-scoped SDK subscriptions; no company path. Temporary/persistent event callback registration/cleanup: explicit intent to modify only an owned current-user COM registration.",
+    "--journal": "Applied mutations: new JSONL file in an existing directory. Default artifacts/runs/UUID.jsonl. events listen requires a new notification journal.",
+    "--protocol": "sdk run/validate: dotted host-supported qbXML version up to17.0; selected newer fields require their documented version. Batch plan supplies its version.",
+    "--country": "sdk run/validate: US, CA, UK or AU; host country checked before execution.",
+    "--batch-size": "sdk batch: requests per message set, 1..1000; default 50. UTF-8 byte bound defaults to1 MiB; batch JSON maximumBatchBytes permits1024..16777216.",
+    "--all": "sdk run: finish supported iterator query in one session. Explicit filters retain SDK semantics, including default ActiveStatus."
+  },
+  "exitCodes": {
+    "0": "Success",
+    "2": "Invalid arguments",
+    "3": "Unsupported platform or unregistered SDK",
+    "4": "Company, session, SDK, response, lookup or result-limit failure",
+    "5": "Unexpected internal failure"
+  },
+  "errors": {
+    "envelope": {
+      "success": false,
+      "schemaVersion": 1,
+      "error": {
+        "code": "string",
+        "message": "string",
+        "diagnosticCode": "string|null"
+      }
+    },
+    "codes": [
+      "invalid_arguments",
+      "unsupported_platform",
+      "sdk_not_registered",
+      "company_file_not_found",
+      "session_failed",
+      "quickbooks_connection",
+      "quickbooks_status",
+      "invalid_response",
+      "incomplete_response",
+      "not_found",
+      "ambiguous_match",
+      "result_limit",
+      "internal_error",
+      "sdk_busy",
+      "source_process_running",
+      "source_process_unavailable",
+      "reconciliation_required"
+    ],
+    "retry": "Read commands can be retried after fixing authorization or connection. No automatic retry. Failed queries never emit partial results as success."
+  },
+  "schemas": {
+    "CallbackServerRegistrationResult": "success,schemaVersion,mode=preview|apply,submitted,callbackClsid,companyFile,serverExecutable,journalDirectory,durationSeconds,persistentRegistration=true,autoActivationVerified=false,quickBooksDeliveryVerified=false,scope=current Windows user,guidance. Success describes registration only. No SDK subscriptions are installed. Apply writes a fresh per-user COM identity; preview creates no key. Native auto-launch currently fails with 0x80040154 on the tested PC; DeliverAlways remains unverified.",
+    "TransactionsResult": {
+      "success": "boolean",
+      "schemaVersion": "integer",
+      "company": "string|null",
+      "companyFile": "string",
+      "selection": {
+        "since": "yyyy-MM-dd|null",
+        "until": "yyyy-MM-dd|null",
+        "memoContains": "string|null"
+      },
+      "complete": "boolean; selected SDK iterator finished before memo filtering",
+      "pages": "integer",
+      "scannedRecords": "integer; selected summary records before memo filtering",
+      "coverageScope": "SDK permissions/features apply; TimeTracking excluded; summary memo only, no posting-line detail",
+      "results": [
+        {
+          "id": "string; identity is (type,id)",
+          "type": "string; SDK transaction type",
+          "date": "yyyy-MM-dd",
+          "number": "string|null",
+          "amount": "decimal|null; signed SDK summary amount, not a balance or computed posting total",
+          "memo": "string|null",
+          "entity": "null or {id:string|null,fullName:string|null}",
+          "account": "null or {id:string|null,fullName:string|null}",
+          "currency": "null or {id:string|null,fullName:string|null}; unknown when omitted"
+        }
+      ],
+      "ordering": "ordinal date, type, ID; absent amounts/currency remain unknown, no aggregation or home-currency inference"
+    },
+    "FinancialReportResult": {
+      "success": "boolean",
+      "schemaVersion": "integer",
+      "company": "string|null",
+      "companyFile": "string",
+      "selection": {
+        "kind": "TrialBalance|ProfitLoss|BalanceSheet",
+        "from": "yyyy-MM-dd|null",
+        "to": "yyyy-MM-dd|null",
+        "asOf": "yyyy-MM-dd|null",
+        "basis": "accrual|cash (requested)"
+      },
+      "title": "string|null",
+      "subtitle": "string|null",
+      "basis": "accrual|cash|none|null (actual SDK report)",
+      "complete": "boolean; requires declared dimensions, unique IDs and valid cell references",
+      "titleRowCount": "integer",
+      "columns": [
+        {
+          "id": "positive integer",
+          "valueType": "text|amount|date|dateTime|integer|quantity|percent|boolean",
+          "meaning": "string|null",
+          "titles": [
+            {
+              "row": "positive integer",
+              "text": "string|null"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "number": "positive integer",
+          "kind": "text|data|subtotal|total",
+          "text": "string|null",
+          "entityType": "string|null",
+          "entityName": "string|null; SDK row label, never inferred ListID",
+          "cells": [
+            {
+              "columnId": "positive integer",
+              "valueType": "effective column/cell type",
+              "text": "string|null; exact SDK cell value",
+              "amount": "decimal|null; only nonblank amount cells"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Preserve SDK order, sparse cells, title rows and exact text; absent, blank and explicit zero remain distinct. Do not add subtotal/total rows to compute another total. No currency, account IDs or additional hierarchy are inferred. Reports are bounded to1M rows,1000 columns/title rows and the shared32MiB response character limit. No report paging is claimed."
+    },
+    "DocumentsResult": {
+      "success": "boolean",
+      "schemaVersion": "integer",
+      "company": "string|null",
+      "companyFile": "string",
+      "documentType": "invoice|bill",
+      "openOnly": "boolean",
+      "complete": "boolean",
+      "pages": "integer",
+      "results": [
+        {
+          "id": "string",
+          "number": "string|null",
+          "date": "yyyy-MM-dd",
+          "dueDate": "yyyy-MM-dd|null",
+          "party": {
+            "id": "string",
+            "fullName": "string|null"
+          },
+          "remainingAmount": "decimal|null; document currency, unknown when absent; not original Bill.AmountDue",
+          "paid": "boolean|null",
+          "memo": "string|null",
+          "currency": "null or {id:string|null,name:string|null}; missing means unknown, no home-currency inference"
+        }
+      ]
+    },
+    "Company": {
+      "success": "boolean",
+      "schemaVersion": "integer",
+      "company": "string|null",
+      "info": {
+        "name": "string|null",
+        "legalName": "string|null"
+      }
+    },
+    "Accounts": {
+      "success": "boolean",
+      "schemaVersion": "integer",
+      "company": "string|null",
+      "accounts": [
+        {
+          "id": "string",
+          "name": "string",
+          "fullName": "string",
+          "type": "string",
+          "active": "boolean|null"
+        }
+      ]
+    },
+    "Parties": {
+      "success": "boolean",
+      "schemaVersion": "integer",
+      "company": "string|null",
+      "entityType": "customer|vendor",
+      "complete": "boolean",
+      "results": [
+        {
+          "id": "string",
+          "name": "string",
+          "fullName": "string",
+          "active": "boolean|null",
+          "companyName": "string|null"
+        }
+      ]
+    },
+    "Help": {
+      "success": "boolean",
+      "schemaVersion": "integer",
+      "help": "string"
+    },
+    "Diagnostics": {
+      "success": "boolean",
+      "schemaVersion": "integer",
+      "windows": "boolean",
+      "processArchitecture": "string",
+      "runtime": "string",
+      "apartment": "string",
+      "requestProcessorRegistered": "boolean",
+      "comActivationTested": "boolean",
+      "readOnlyPreferencesConfigured": "boolean",
+      "liveConnectionTested": "boolean",
+      "fullAccessPreferencesConfigured": "boolean",
+      "requestedAccess": {
+        "readWrite": "boolean",
+        "personalData": "required",
+        "unattended": "required"
+      }
+    },
+    "Discovery": "This contract plus sdkCatalog, sdkReference, audits, live test coverage and connection. Offline connection.state=not_connected; live adds company, host, companyFile and queryProtocolVersion. companyFeatures:{probeState,sourceOperation,protocolVersion,statusCode,facts:[{id,sourcePath,enabled(bool|null),value(string|null),state,reason}],error}; offline facts are unknown. companyFeatureContract defines scope and privacy. Feature observations do not change sdkCatalog.availableInConnectedCompany from null.",
+    "SdkSchema": "Expanded documented request/response structural metadata; no connection.",
+    "SdkPreview": "success, schemaVersion, mode=preview, submitted=false, planDigest, requiresApply, companyFile, executionScope, referenceProtocolMaximum, plan, batchCount; mutatesCompany, mutatesSubscriptions, mutatesRecoveryState, affectsUserInterface describe intended effect categories. Local validation, not server dry run.",
+    "SdkExecution": "success, schemaVersion, companyFile, planDigest, mutatesCompany, atomic=false, journalFile, results. Each result: requestId, operation, outcome, statusCode, severity, statusMessage, remainingCount, iteratorId, data. Data is a recursive SDK element tree: name, attributes, value(string|null), children. executionScope=company|local_quickbooks_installation; mutatesCompany, mutatesSubscriptions, mutatesRecoveryState, affectsUserInterface boolean flags describe possible plan effects, not proof they occurred. Subscription results have empty companyFile and mutatesCompany=false. messageSetResponses:[{batchIndex,attributes}] preserves SDK envelope recovery status. Missing request statuses remain unknown.",
+    "SdkQuery": "success, schemaVersion, companyFile, operation, protocolVersion, complete, pages, data. --all returns complete iterator data or a failure envelope.",
+    "SdkExecutionOrPreview": "SdkExecution or SdkPreview depending on explicit apply intent.",
+    "ReclassificationResult": "success,schemaVersion,mode=preview|apply,companyFile,selection,scope,coverageCompleteForAllAccountPostings=false,planDigest(nullable for empty selection),plan,counts,changes(original form and originalPostings|null snapshots),journalFile,execution,verification(transactionType,txnId,classVerified,otherFieldsPreserved,postingAccountsAndAmountsPreserved:bool|null),verificationError. Sales posting failure also sets otherFieldsPreserved false. Apply re-reads/plans; no saved-preview execution. No work returns success without submission.",
+    "SdkResumeResult": "success, schemaVersion, mode, sourceJournal, resumption(companyFile,sourceDigest,pendingPlan,confirmedCompleted,failedExcluded,requiresReconciliation,sourceProcess:{processId,startTimeUtc}|null,sourceProcessState=running|stopped|unknown|legacy_unknown,canApply), execution, guidance. Observation failure is unknown, never stopped. finished records establish request outcomes only; they do not establish process cleanup or exit.",
+    "EventListenerResult": "success, schemaVersion, callbackClsid, companyFile, journalFile, receivedEvents, ignoredEvents, failedCallbacks, elapsedSeconds. Notifications are in JSONL event records; all other companies are ignored. temporaryRegistration boolean.",
+    "EventListenerOrPreview": "EventListenerResult or offline registration preview requiring --apply.",
+    "EventCleanupResult": "success, schemaVersion, mode, callbackClsid, companyFile, registrationExists, removed, guidance."
+  },
+  "schemaNotation": "Descriptive field contracts, not JSON Schema. Nullable values and empty arrays are valid. schemaVersion covers output shape; product version is independent.",
+  "bulkChanges": {
+    "implemented": true,
+    "rawSdkExecutionImplemented": false,
+    "feasibility": "SDK accepts multiple requests per message set and multiple message sets per session. Individual transactions still require individual modification requests; batching avoids repeated process/session setup, not per-transaction SDK work.",
+    "atomic": false,
+    "example": "Reclassify only eligible postings in the specified account with no class to RentalA. Transaction-level and line-level class fields differ by transaction type. Class elsewhere on a transaction must remain unchanged.",
+    "proposedWorkflow": [
+      "Discover eligible transaction types and class modification fields from their documented schemas; identify account/class by ListID and verify company identity.",
+      "Read all candidate pages, including line detail. Build an immutable preview containing before/after values, TxnID, EditSequence, line IDs, exclusions and counts.",
+      "Group all eligible changes in each transaction into one modification request; preserve other lines according to that operation's modification semantics.",
+      "Revalidate the plan and modification prerequisites, then use one STA connection and bounded batches constrained by request count and XML bytes.",
+      "Persist intent before submission and correlate every response by requestID. Record succeeded, failed, unprocessed and unknown outcomes separately.",
+      "Checkpoint between batches. Resume skips confirmed successes; uncertain submissions require reconciliation or SDK error recovery before retry."
+    ],
+    "failureSemantics": "stopOnError leaves prior successes applied and later requests unprocessed; continueOnError attempts remaining requests. Neither rolls back a batch. EditSequence conflicts need re-read/replan. No blind retries after uncertain writes.",
+    "performance": "Serialize SDK access and tune bounded batch sizes. Sanitized synthetic test timings in liveTestCoverage are local observations, not production throughput guarantees.",
+    "coverage": "SDK batches, journals, selective residual-plan resume and eight default expense/journal/deposit types including confirmed service/non-inventory/other-charge purchase item classes plus opt-in Invoice/SalesReceipt/CreditMemo service/non-inventory/other-charge single-posting and three-posting inventory revenue reclassification with confirmed item/account types and form/posting read-back. Purchase inventory, inventory COGS/asset class selection, assemblies, nonposting leaves and universal posting coverage remain unimplemented; purchase PO links, already-billed allocations and billable group children remain unverified; flat Billable customer fields have scoped preservation evidence.",
+    "schemaValidatedSdkExecutionImplemented": true
+  },
+  "sources": [
+    {
+      "title": "Intuit QuickBooks Desktop SDK Programmer Guide",
+      "url": "https://static.developer.intuit.com/resources/QBSDK_ProGuide.pdf"
+    },
+    {
+      "title": "Intuit QuickBooks Desktop API reference",
+      "url": "https://developer.intuit.com/app/developer/qbdesktop/docs/api-reference/qbdesktop"
+    }
+  ]
+}

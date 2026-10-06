@@ -1,0 +1,17 @@
+bin/
+obj/
+artifacts/
+QBData/
+*.QBW
+*.QBB
+*.QBM
+*.ND
+*.TLG
+*.log
+.vs/
+__pycache__/
+*.pyc
+local-data/
+*.csv
+.env
+.env.*

@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup><ProjectReference Include="../QbCli.Core/QbCli.Core.csproj" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="Resources/*.json" /></ItemGroup>
+</Project>

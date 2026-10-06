@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>qbcli</AssemblyName>
+    <Version>0.8.39</Version>
+    <Product>qbcli by McMurry Software</Product>
+    <Description>Independent QuickBooks Desktop CLI by McMurry Software. Not developed, sponsored, or endorsed by Intuit.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../QbCli.Core/QbCli.Core.csproj" />
+    <ProjectReference Include="../QbCli.QuickBooks/QbCli.QuickBooks.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources/*" />
+  </ItemGroup>
+</Project>

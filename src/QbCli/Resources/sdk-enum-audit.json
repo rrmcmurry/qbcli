@@ -1,0 +1,194 @@
+{
+  "retrieved": "2026-10-05",
+  "scope": "Enum comment comparisons only. Current example omissions do not withdraw documented legacy values; new values need separate country/version evidence. Private SDK values stay excluded.",
+  "comparedFields": 1249,
+  "differences": [
+    {
+      "operation": "Form1099CategoryAccountMappingMod",
+      "kind": "request",
+      "path": "/Form1099CategoryAccountMappingModRq/Form1099CategoryAccountMappingMod/CategoryAccountMappingMod/MappingCategory",
+      "currentPublicValues": [
+        "BOX1",
+        "BOX2",
+        "BOX3",
+        "BOX4",
+        "BOX5",
+        "BOX6",
+        "BOX7",
+        "BOX8",
+        "BOX9",
+        "BOX10",
+        "BOX14",
+        "BOX16"
+      ],
+      "missingExecutableValues": [
+        "BOX16"
+      ],
+      "legacyValuesNotListedCurrently": [
+        "BOX13",
+        "BOX15"
+      ],
+      "privateValuesExcluded": [],
+      "executableValueVersionRules": {
+        "BOX15": {
+          "US": {
+            "minimum": "14.0"
+          },
+          "CA": {
+            "supported": false
+          },
+          "UK": {
+            "supported": false
+          },
+          "AU": {
+            "supported": false
+          },
+          "OE": {
+            "supported": false
+          }
+        },
+        "BOX14": {
+          "US": {
+            "maximumExclusive": "14.0"
+          }
+        }
+      },
+      "executableEnumSourceUrl": "https://static.developer.intuit.com/resources/ReleaseNotes_QBXMLSDK_14_0.pdf",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/form1099categoryaccountmappingmod.html",
+      "sourceSha256": "f3c4cc8c35aaf5bed6683d1f33a042bdca6654507b406b1f33db4d23c31ad714"
+    },
+    {
+      "operation": "Form1099CategoryAccountMappingMod",
+      "kind": "response",
+      "path": "/Form1099CategoryAccountMappingModRs/Form1099CategoryAccountMappingRet/CategoryAccountMapping/MappingCategory",
+      "currentPublicValues": [
+        "BOX1",
+        "BOX2",
+        "BOX3",
+        "BOX4",
+        "BOX5",
+        "BOX6",
+        "BOX7",
+        "BOX8",
+        "BOX9",
+        "BOX10",
+        "BOX14",
+        "BOX1"
+      ],
+      "missingExecutableValues": [],
+      "legacyValuesNotListedCurrently": [
+        "BOX13",
+        "BOX15"
+      ],
+      "privateValuesExcluded": [],
+      "executableValueVersionRules": {
+        "BOX15": {
+          "US": {
+            "minimum": "14.0"
+          },
+          "CA": {
+            "supported": false
+          },
+          "UK": {
+            "supported": false
+          },
+          "AU": {
+            "supported": false
+          },
+          "OE": {
+            "supported": false
+          }
+        },
+        "BOX14": {
+          "US": {
+            "maximumExclusive": "14.0"
+          }
+        }
+      },
+      "executableEnumSourceUrl": "https://static.developer.intuit.com/resources/ReleaseNotes_QBXMLSDK_14_0.pdf",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/form1099categoryaccountmappingmod.html",
+      "sourceSha256": "f3c4cc8c35aaf5bed6683d1f33a042bdca6654507b406b1f33db4d23c31ad714"
+    },
+    {
+      "operation": "Form1099CategoryAccountMappingQuery",
+      "kind": "response",
+      "path": "/Form1099CategoryAccountMappingQueryRs/Form1099CategoryAccountMappingRet/CategoryAccountMapping/MappingCategory",
+      "currentPublicValues": [
+        "BOX1",
+        "BOX2",
+        "BOX3",
+        "BOX4",
+        "BOX5",
+        "BOX6",
+        "BOX7",
+        "BOX8",
+        "BOX9",
+        "BOX10",
+        "BOX14",
+        "BOX16"
+      ],
+      "missingExecutableValues": [
+        "BOX16"
+      ],
+      "legacyValuesNotListedCurrently": [
+        "BOX13",
+        "BOX15"
+      ],
+      "privateValuesExcluded": [],
+      "executableValueVersionRules": {
+        "BOX15": {
+          "US": {
+            "minimum": "14.0"
+          },
+          "CA": {
+            "supported": false
+          },
+          "UK": {
+            "supported": false
+          },
+          "AU": {
+            "supported": false
+          },
+          "OE": {
+            "supported": false
+          }
+        },
+        "BOX14": {
+          "US": {
+            "maximumExclusive": "14.0"
+          }
+        }
+      },
+      "executableEnumSourceUrl": "https://static.developer.intuit.com/resources/ReleaseNotes_QBXMLSDK_14_0.pdf",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/form1099categoryaccountmappingquery.html",
+      "sourceSha256": "d7cff38ccee738b122c3f6233b5777c28242d5c1b8bc59274bf80f7e5b38007f"
+    },
+    {
+      "operation": "TemplateQuery",
+      "kind": "response",
+      "path": "/TemplateQueryRs/TemplateRet/TemplateType",
+      "currentPublicValues": [
+        "BuildAssembly",
+        "CreditMemo",
+        "Estimate",
+        "Invoice",
+        "PurchaseOrder",
+        "SalesOrder",
+        "SalesReceipt",
+        "receipt payment",
+        "bill payment"
+      ],
+      "missingExecutableValues": [
+        "bill payment",
+        "receipt payment"
+      ],
+      "legacyValuesNotListedCurrently": [],
+      "privateValuesExcluded": [],
+      "executableValueVersionRules": {},
+      "executableEnumSourceUrl": null,
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/templatequery.html",
+      "sourceSha256": "e92af696485d629fd5c3ab76d7c42159c2e929d93dbf865ed324a24e405efcf6"
+    }
+  ],
+  "unparsed": []
+}

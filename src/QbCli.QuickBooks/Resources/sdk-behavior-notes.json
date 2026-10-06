@@ -1,0 +1,322 @@
+[
+  {
+    "id": "expense-line-list-preservation",
+    "operations": [
+      "CheckMod",
+      "BillMod",
+      "CreditCardChargeMod",
+      "CreditCardCreditMod",
+      "VendorCreditMod",
+      "ItemReceiptMod"
+    ],
+    "summary": "When modifying expense-line classes, retain every existing ExpenseLineRet TxnLineID in ExpenseLineMod, including unselected lines and existing ClassRef ListIDs. Live sparse expense-line modification deleted omitted expense lines. Do not reconstruct the list from only selected changes. Untouched item lines were preserved when no item modifiers were sent.",
+    "evidenceScope": "McMurry Software synthetic live tests on QuickBooks Accountant Desktop Plus 2024 R21 US, protocol13.0. See liveTestCoverage.bulkReclassificationChecks. Observed behavior, not a promise for every SDK configuration."
+  },
+  {
+    "id": "journal-class-line-preservation",
+    "operations": [
+      "JournalEntryMod"
+    ],
+    "summary": "Class-only reclassification retained every existing debit/credit TxnLineID in JournalLineMod and carried existing ClassRef ListIDs. Amount, AccountRef and JournalLineType were omitted, leaving those fields unchanged in fresh reads. Verify both debit and credit sides and all other returned fields after writing.",
+    "evidenceScope": "McMurry Software balanced-journal live tests on QuickBooks Accountant Desktop Plus 2024 R21 US, protocol13.0. See liveTestCoverage.bulkReclassificationChecks; no all-country or all-field guarantee."
+  },
+  {
+    "id": "deposit-existing-payment-link",
+    "operations": [
+      "DepositMod"
+    ],
+    "summary": "For existing deposit-line class updates, use the deposit TxnLineID, unchanged AccountRef ListID and ClassRef. Retain every original deposit line and existing class. Do not copy DepositLineRet TxnID into PaymentTxnID to preserve an already deposited payment: that re-submission returned SDK3210, record not in Payments to Deposit. Updating the existing line without resubmitting PaymentTxnID preserved its received-payment link and cash-back details in fresh reads. PaymentTxnID/OverrideClassRef remain documented fields for the separate payment-selection branch, not the tested existing-line class-update recipe.",
+    "evidenceScope": "McMurry Software synthetic live tests on QuickBooks Accountant Desktop Plus 2024 R21 US, protocol13.0. See liveTestCoverage.bulkReclassificationChecks and failed DepositMod outcomes. These notes supplement structural discovery; verify every source link and returned field after writing."
+  },
+  {
+    "id": "absent-event-recovery-record-delete",
+    "operations": [
+      "DataEventRecoveryInfoDel"
+    ],
+    "summary": "For a fresh owned data subscription with TrackLostEvents=All, DataEventRecoveryInfoQuery returned no_match, while DataEventRecoveryInfoDel returned SDK3120/not found. The delete remains a failed request, not successful deletion or query no_match. A fresh query still showed no recovery record, and the data subscription remained present until explicitly removed with SubscriptionDel. This operation targets company-scoped event recovery state, not accounting/list records or installation-scoped subscription definitions.",
+    "evidenceScope": "McMurry Software synthetic live tests on QuickBooks Accountant Desktop Plus 2024 R21 US, protocol13.0, Test.QBW. See liveTestCoverage.eventRecoveryChecks. No real lost event or existing recovery record was produced; successful recovery-record deletion and actual event replay remain unverified."
+  },
+  {
+    "id": "transaction-query-composite-iterator-identity",
+    "operations": [
+      "TransactionQuery"
+    ],
+    "summary": "TransactionQuery summaries and posting rows can share TxnID; inventory income, asset and COGS rows can share TxnType/TxnID/TxnLineID. Inventory purchase credits can also share AccountRef ListID with distinct Amount values. Posting duplicate checks therefore include account ID and optional invariant numeric amount; summaries retain transaction-only identity. Missing account/amount discriminators stay null. Distinct returned amount rows survive; equivalent numeric text and repeated extended keys still fail. Malformed/duplicate amount fields fail visibly. Projections fetch missing identity fields including AccountRef/Amount internally and remove only those added. Caller-selected fields remain present.",
+    "evidenceScope": "McMurry Software Test.QBW deposit/cash-back, inventory sales and inventory purchase-credit fixtures, QuickBooks Accountant Desktop Plus2024R21 US protocol13.0. Sales nine-row/nine-page and purchase-credit eighteen-row/eighteen-page full/amount/account reads matched independent unbounded queries. A six-type unbounded purchase query found six same-account/line collision pairs differing only in Amount. See transactionIterationChecks, inventoryIteratorChecks, purchasePostingIdentityChecks and purchaseInventoryIteratorChecks. No universal posting identity or purchase inventory class-modification proof."
+  },
+  {
+    "id": "sales-class-actual-posting-preservation",
+    "operations": [
+      "InvoiceMod",
+      "SalesReceiptMod",
+      "CreditMemoMod",
+      "TransactionQuery"
+    ],
+    "summary": "For the verified service-item class-change recipe, retain every flat/group child TxnLineID and group container identity. Set ClassRef only on selected blank-class leaves, carry existing classes, and explicitly set each retained leaf's OverrideItemAccountRef to its actual TransactionQuery posting account. Current item defaults cannot establish historical or per-line override accounts, and form returns omit those overrides. TransactionQuery posting rows supply accounts/amounts but do not return ClassRef; verify classes through fresh transaction-specific form queries. Fresh reads preserved every unselected form field, line identity and accounting posting after the service item's default account had changed.",
+    "evidenceScope": "McMurry Software Test.QBW service-item fixtures, QuickBooks Accountant Desktop Plus 2024 R21 US, protocol13.0. Six classes changed across Invoice/SalesReceipt/CreditMemo, with eighteen retained leaf lines and group children. See liveTestCoverage.salesClassPreservationChecks. Not inventory/COGS, nonposting items, multiple accounts per line, every transaction field, or generic bulk sales support. No sparse sales modifier behavior was tested."
+  },
+  {
+    "id": "inventory-cogs-default-reference-effect",
+    "operations": [
+      "ItemInventoryMod",
+      "TransactionQuery"
+    ],
+    "summary": "In the tested inventory fixture, ItemInventoryMod changed IncomeAccountRef and COGSAccountRef with both ApplyIncomeAccountRefToExistingTxns and ApplyCOGSAccountRefToExistingTxns false. Fresh TransactionQuery posting reads retained historical income/asset references and line amounts but changed three COGS account references per Invoice/SalesReceipt/CreditMemo to the new COGS account. Do not infer historical COGS preservation from the false flag or extend the service-item class recipe without separate inventory evidence. The probe stopped before class modifiers.",
+    "evidenceScope": "McMurry Software Test.QBW inventory quantity/value fixture with overrides and mixed inventory/service group, US QuickBooks Accountant Desktop Plus 2024 R21, protocol13.0. See inventoryDefaultAccountChecks. Observed SDK account references only; no independent before/after ledger comparison, all-release flag-semantics claim or inventory class-preservation proof."
+  },
+  {
+    "id": "inventory-sales-class-current-baseline",
+    "operations": [
+      "InvoiceMod",
+      "SalesReceiptMod",
+      "CreditMemoMod",
+      "TransactionQuery"
+    ],
+    "summary": "A separate class-only inventory probe retained every flat/group child and group identity, carried existing classes and used fixture-confirmed actual revenue posting accounts as OverrideItemAccountRef. Two blank-class revenue leaves per form received the target class. Fresh form, posting and item reads preserved all other returned form fields, all income/asset/COGS posting fields and item quantities/costs/definitions apart from modification time/edit sequence. Multiple posting accounts per inventory leaf require a separately established revenue-account selection rule; do not choose the first account or infer it from current item defaults.",
+    "evidenceScope": "Test.QBW inventory quantity/value fixture with per-line overrides and a mixed inventory/service group, QuickBooks Accountant Desktop Plus 2024 R21 US, protocol13.0. See liveTestCoverage.inventoryClassPreservationChecks: six classes, twelve retained leaves and thirty-six posting rows independently checked. Current baseline after the earlier default-account experiment; no pre-default-change COGS preservation, COGS-account class-selection, independent ledger report or generic inventory bulk-planner proof."
+  },
+  {
+    "id": "inventory-bulk-revenue-account-resolution",
+    "operations": [
+      "InvoiceMod",
+      "SalesReceiptMod",
+      "CreditMemoMod",
+      "TransactionQuery",
+      "ItemInventoryQuery",
+      "AccountQuery"
+    ],
+    "summary": "Public bulk reclassify now resolves retained inventory leaf revenue using confirmed inventory identity and actual posting account types. Require exactly three distinct Income, OtherCurrentAsset and CostOfGoodsSold accounts, balanced asset/COGS amounts and revenue magnitude matching the form. Retain all flat/group identities, actual revenue overrides and existing classes. Only the actual revenue account selects a blank class; COGS/asset class selection and other posting shapes are rejected. Current item defaults never establish historical posting accounts.",
+    "evidenceScope": "Fresh Test.QBW inventory quantity/value fixture, per-line overrides and mixed service/inventory groups, QuickBooks Accountant Desktop Plus 2024 R21 US, protocol13.0. See inventoryBulkReclassificationChecks: three transactions/six classes; fresh form/posting checks and separate item reads preserved returned fields, quantities, costs and definitions; repeat preview had no residual work. Other item kinds, releases and inventory posting shapes remain unverified."
+  },
+  {
+    "id": "noninventory-othercharge-sales-class-preservation",
+    "operations": [
+      "InvoiceMod",
+      "SalesReceiptMod",
+      "CreditMemoMod",
+      "ItemNonInventoryQuery",
+      "ItemOtherChargeQuery"
+    ],
+    "summary": "Confirmed non-inventory and other-charge sales leaves now use the actual single-posting class recipe. Complete item-kind queries include inactive items; shared and separate sales/purchase definitions are supported. Each retained leaf requires one actual account posting whose amount magnitude matches the form. Retain ordered flat/group identities, actual account overrides and existing classes; change only selected blank classes. Item definitions do not establish historical or per-line override accounts.",
+    "evidenceScope": "Fresh Test.QBW public bulk fixture on QuickBooks Accountant Desktop Plus 2024 R21 US, protocol13.0. Twelve Invoice/SalesReceipt/CreditMemo forms, forty-eight classes and eighty-four retained leaves with overrides, existing classes and mixed service groups. Form/posting read-back, item-definition comparison and zero-residual repeat passed. Journal independently confirmed three message sets of five/five/two modifiers. See additionalSalesItemBulkChecks. No purchase-item recipe, changed-default, nonposting-item or other-release proof."
+  },
+  {
+    "id": "purchase-item-line-class-preservation",
+    "operations": [
+      "CheckMod",
+      "BillMod",
+      "CreditCardChargeMod",
+      "CreditCardCreditMod",
+      "VendorCreditMod",
+      "ItemReceiptMod"
+    ],
+    "summary": "Explicit typed batch tests retained every flat ItemLineRet and ordered ItemGroupLineRet container/child as ItemLineMod/ItemGroupLineMod, with each leaf's actual TransactionQuery posting account in OverrideItemAccountRef, existing classes and selected target classes. Each tested leaf had one posting matching its amount magnitude. Fresh forms/postings preserved unselected returned fields, actual overrides, amounts and expense lines. The item-only modifiers omitted ExpenseLineMod. Current item definitions cannot establish historical or per-line accounts. This note describes the original item-only recipe; current public integration has separate combined purchase bulk evidence.",
+    "evidenceScope": "Test.QBW service/non-inventory/other-charge purchase fixtures, QuickBooks Accountant Desktop Plus2024R21 US protocol13.0. Six transaction types, twenty-four classes and thirty-six retained item leaves including groups. See purchaseItemClassPreservationChecks and purchaseLineClassContract. No inventory, PO links, billable/customer allocations, simultaneous expense/item mutation, sparse modifier or other-release proof."
+  },
+  {
+    "id": "purchase-item-expense-combined-bulk",
+    "operations": [
+      "CheckMod",
+      "BillMod",
+      "CreditCardChargeMod",
+      "CreditCardCreditMod",
+      "VendorCreditMod",
+      "ItemReceiptMod"
+    ],
+    "summary": "Public bulk reclassify merges selected purchase item and expense classes into one modifier per transaction with one fresh EditSequence. Confirmed single-posting service/non-inventory/other-charge item leaves use actual accounts, retained ordered flat/group lists and existing classes. Expense lists retain every original line when changed. Fresh verification checks combined classes, every other returned form field and all posting fields. Item-only requests omit ExpenseLineMod; expense-only requests omit item modifiers. Missing/ambiguous joins, unsupported retained items and amount mismatches abort item planning before writes.",
+    "evidenceScope": "Fresh Test.QBW public combined fixtures, QuickBooks Accountant Desktop Plus2024R21 US protocol13.0. Six forms/thirty classes/thirty-six item leaves/twelve expense lines, two journal-confirmed batches of three modifiers and empty repeat preview. Fresh form/posting reads and independent retained-evidence verification passed. See purchaseItemBulkReclassificationChecks. Purchase inventory unsupported; PO links and billable/customer allocation remain unverified."
+  },
+  {
+    "id": "purchase-billable-customer-class-preservation",
+    "operations": [
+      "CheckMod",
+      "BillMod",
+      "CreditCardChargeMod",
+      "CreditCardCreditMod",
+      "VendorCreditMod",
+      "ItemReceiptMod"
+    ],
+    "summary": "A fresh combined purchase item/expense bulk fixture preserved CustomerRef and BillableStatus=Billable on flat item/expense lines while changing their selected classes. Existing classes, all other returned form fields and all actual posting fields stayed preserved. Source and verification queries now request IncludeLinkedTxns for Check/Bill/VendorCredit/ItemReceipt; the two card query schemas do not support it. This is not already-billed allocation or billable group-child evidence.",
+    "evidenceScope": "Test.QBW QuickBooks Accountant Desktop Plus2024R21 US protocol13.0, six forms/thirty classes, thirty-six allocated flat item/expense lines, mixed groups, overrides and existing classes. Fresh form/posting reads, independent retained-evidence verification and empty repeat preview passed. See purchaseBillableClassChecks. A separate linked non-inventory PO plus billable BillAdd failed with SDK3250; purchaseLinkProbeChecks records the exact combination, not an isolated field cause or successful PO-link preservation."
+  },
+  {
+    "id": "purchase-order-link-controls-feature-unavailable",
+    "operations": [
+      "BillAdd",
+      "ItemReceiptAdd",
+      "PurchaseOrderQuery",
+      "PreferencesQuery"
+    ],
+    "summary": "Eight small PO-link controls without billable fields returned SDK3250: BillAdd and ItemReceiptAdd with non-inventory/inventory items using whole-order LinkToTxnID or individual-line LinkToTxn. No linked purchase form or class-preservation proof was produced. Eight fresh PO queries still showed no links, ReceivedQuantity=0 and IsFullyReceived=false. PreferencesQuery reported IsUsingInventory=false even though item and PO Add operations had succeeded. Do not infer that successful PO/item creation enables transaction linking or that this preference alone universally determines SDK operation availability.",
+    "evidenceScope": "Test.QBW QuickBooks Accountant Desktop Plus2024R21 US protocol13.0, eight distinct POs and exact failed linking controls. Four receipt controls were proven unsubmitted after the first failed batch, then explicitly resumed only after the original process stopped; failed bills were excluded and not replayed. See purchaseOrderLinkControlChecks. Observed configuration and outcomes, not a proven preference cause, other-edition conclusion or successful linked-form lifecycle."
+  },
+  {
+    "id": "sales-special-item-class-preservation",
+    "operations": [
+      "InvoiceMod",
+      "SalesReceiptMod",
+      "CreditMemoMod",
+      "ItemDiscountQuery",
+      "ItemSubtotalQuery",
+      "ItemPaymentQuery",
+      "TransactionQuery"
+    ],
+    "summary": "Confirmed discount/payment leaves use one historical account posting with amount magnitude matching the form line. Preserve actual overrides and existing classes. Confirmed subtotal leaves must have no account postings and are retained without a new class/account override. Every ordered retained leaf remains in the modifier. Complete item-kind identities are queried before planning; unknown or ambiguous shapes fail before writes.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: flat fixed-discount/subtotal and payment explicit/public fixtures preserved every unselected returned form and posting field. Separate public five-decimal percentage/subtotal fixtures changed nine classes when service/discount shared the selected account, then three discount-only classes under a separate discount account while retaining six service leaves. Signed RatePercent and rounded subtotal discount calculation, full returned form/posting preservation, batches two/one and empty repeat previews passed independent saved-evidence verification. Group contexts, sales-tax items, changed payment defaults and other releases remain unverified. See liveTestCoverage.salesSpecialItemBulkChecks and salesPaymentItemBulkChecks."
+  },
+  {
+    "id": "private-extension-definition-deletion",
+    "operations": [
+      "DataExtDefAdd",
+      "DataExtDefDel",
+      "DataExtDefQuery",
+      "DataExtAdd",
+      "CustomerQuery"
+    ],
+    "summary": "Fresh owned private GUID/name definitions were successfully deleted with single-user BeginSession requested: one unused and one assigned to a customer whose private value was still present. Fresh definition/customer queries verified absence after deletion; independent retained evidence and deletion journal checks passed. AssignToObject:Customer was required by the assigned fixture; omitting it returned SDK3180 before any value was saved. Prior-owner definition deletions returned3175 and are retained as separate negative evidence. These controls do not establish which changed context resolved those earlier failures. A fresh unused definition deletion was followed by deliberate same-owner/name recreation: SDK3180 rejection, with fresh queries confirming absence. The same name under a new private owner was accepted, read, deleted and confirmed absent; independent saved-plan/journal verification passed.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: three successful private-definition deletion controls, one assigned fixture customer/value, plus same-owner recreation rejection and different-owner same-name acceptance/cleanup. No custom-field deletion, inferred cause for prior failures or every object type/other release proof. See liveTestCoverage.privateDefinitionDeletionChecks and privateDefinitionRecreationChecks. Official DataExtDefDel documentation restricts deletion to private definitions and says the same owner/name cannot be recreated after deletion."
+  },
+  {
+    "id": "numeric-five-decimal-preservation",
+    "operations": [
+      "ItemServiceAdd",
+      "ItemServiceQuery",
+      "ItemDiscountAdd",
+      "ItemDiscountQuery",
+      "InvoiceAdd",
+      "InvoiceQuery"
+    ],
+    "summary": "Five fractional digits in service price/invoice rate, invoice quantity and discount definition/line percentage magnitude survived fresh reads. The positive discount input/definition became negative InvoiceLineRet RatePercent; magnitude and fractional digits were preserved. Do not infer that returned discount percentage text has the same sign as its submitted value. Numeric type validation now enforces documented price/quantity/percentage/exchange-rate digit formats with protocol8 boundaries, without rounding or truncation.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: one service, one fixed-percentage discount and one invoice. Initial verifier incorrectly expected a positive invoice discount RatePercent after successful writes/fresh reads; retained-evidence verification accounted for the negative returned sign without replay. No extreme integer-size, older host/protocol, live exchange-rate or universal AMTTYPE proof. See liveTestCoverage.numericPrecisionChecks and sdkNumericContract; conflicting official amount-format evidence stays explicitly unresolved."
+  },
+  {
+    "id": "sales-description-only-retention",
+    "operations": [
+      "InvoiceMod",
+      "SalesReceiptMod",
+      "CreditMemoMod"
+    ],
+    "summary": "Nonposting description-only sales leaves with no ItemRef/account override, nonblank Desc and absent/zero monetary/quantity fields are retained by existing TxnLineID and existing ClassRef without assigning a new class or account. Preserve every ordered line when another posting leaf changes class. Missing/malformed/nonzero itemless material lines and unidentified blank lines do not use this recipe. Any joined account posting blocks description retention in a changed form.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: separate explicit SDK and public bulk flat fixtures each changed six service classes while preserving six description lines, existing description classes and every other returned form/posting field. Public batches two/one, empty repeat preview and independent retained evidence verification passed. No group descriptions, nonzero itemless lines or other releases proof. See liveTestCoverage.salesDescriptionClassChecks and salesDescriptionBulkChecks."
+  },
+  {
+    "id": "mapping-category-version-host-boundaries",
+    "operations": [
+      "Form1099CategoryAccountMappingQuery",
+      "Form1099CategoryAccountMappingMod"
+    ],
+    "summary": "Documented US BOX16 is accepted from protocol16. BOX14 has disjoint documented intervals below14 and16..<17;17 removes it. Current host accepted MISC BOX16 reads at16/17, rejected NEC BOX16 with1000 and rejected BOX14 at16 with3110. Preserve the distinction between historical schema validity and availability on the connected release. No automatic mapping migration is performed.",
+    "evidenceScope": "Test.QBW QBD2024R21 US: twenty read controls, independently checked saved plans/results. No mapping modification, migration, filing semantics or another release proof. See liveTestCoverage.mappingEnumChecks and sdkReference.enumSupplements. Public Intuit Desktop SDK features corroborates BOX16 at16 and BOX14 removal at17; SDK14 release notes establish earlier BOX14 removal."
+  },
+  {
+    "id": "bill-openamount-vendor-aggregate",
+    "operations": [
+      "BillQuery",
+      "BillToPayQuery",
+      "ReceivePaymentAdd",
+      "BillPaymentCheckAdd",
+      "BillPaymentCreditCardAdd"
+    ],
+    "summary": "On the tested host, two distinct bills sharing a vendor returned identical BillQuery.OpenAmount equal to their combined outstanding amounts. Protocol13/17 and line/link projection controls did not resolve it. Normalized bills now use BillToPayQuery.AmountDue joined by transaction ID, one bounded query per distinct unpaid vendor; confirmed paid bills are zero and missing unpaid matches stay unknown. BillQuery.AmountDue stays original total.",
+    "evidenceScope": "Test.QBW QBD2024R21 US: one invoice/two bills unpaid/partial/paid, six explicit receive/check/card payment applications, linked IDs and durable journals independently verified from retained plans/fresh reads. Original fixture halted before payments when OpenAmount contradicted known totals; confirmed successful seed was continued without recreating documents. No credits/discounts, multicurrency, universal vendor-aggregate interpretation or other-release proof. See liveTestCoverage.partialDocumentPaymentChecks."
+  },
+  {
+    "id": "explicit-credit-discount-payment-applications",
+    "operations": [
+      "ReceivePaymentAdd",
+      "ReceivePaymentQuery",
+      "BillPaymentCheckAdd",
+      "BillPaymentCheckQuery",
+      "CreditMemoQuery",
+      "VendorCreditQuery",
+      "BillToPayQuery"
+    ],
+    "summary": "Explicit cash/credit/discount applications succeeded; PaymentAmount represents cash independently of SetCredit.AppliedAmount and DiscountAmount. One vendor credit was split across two bill applications in one payment. Fresh payment queries preserved DiscountAmount, DiscountAccountRef and DiscountClassRef and linked credit IDs/amounts. Credits were fully consumed, per-document remaining amounts matched normalized lists, and subsequent cash completion removed documents from open lists.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: invoice100 minus cash25/credit20/discount5 ->50; bills100/80 minus cash25/credit10/discount5 each ->60/40. Three explicit discount classes/accounts, fresh payment and credit/document queries, six normalized partial/paid states and four mutation batch journals independently verified. No credit-only lean return, overpayment, auto-allocation, applied-credit modification/unapply, multicurrency or other releases proof. See liveTestCoverage.creditDiscountPaymentChecks and creditDiscountApplicationContract."
+  },
+  {
+    "id": "credit-only-lean-returns-and-bill-stubs",
+    "operations": [
+      "ReceivePaymentAdd",
+      "BillPaymentCheckAdd",
+      "BillPaymentCreditCardAdd",
+      "ReceivePaymentQuery",
+      "BillPaymentCheckQuery",
+      "BillPaymentCreditCardQuery",
+      "TransactionQuery"
+    ],
+    "summary": "A successful credit-only application may return no generated payment ID and only document identity in AppliedToTxnRet. Accept the SDK status, preserve missing amounts as unknown and never replay merely because a created ID is absent. The tested host returned no receive-payment record but generated bill-payment stubs labelled zero amount in their memo; numeric TransactionQuery.Amount was omitted. Verify credits, links and remaining balances independently.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: three credit-only40 applications to invoice/two bills100; unbounded fresh payment queries, stub transaction queries, credit consumption, bidirectional links, remaining60, normalized all/open fields and journals independently verified. No numeric cash-impact, universal no-stub, full-credit settlement, modify/unapply, multicurrency or other releases proof. See liveTestCoverage.creditOnlyApplicationChecks and creditOnlyApplicationContract."
+  },
+  {
+    "id": "payment-modifier-redistribution-preserves-existing-credits",
+    "operations": [
+      "ReceivePaymentMod",
+      "BillPaymentCheckMod",
+      "ReceivePaymentQuery",
+      "BillPaymentCheckQuery"
+    ],
+    "summary": "Memo-only modifications without AppliedToTxnMod preserved existing distributions. Supplying AppliedToTxnMod replaces cash/discount applications while retaining existing credits; do not resend those credits via SetCredit merely to preserve them. Supply every intended application and use fresh EditSequence. Explicit zero discount returned no DiscountAmount/account/class fields on the tested host. Missing numeric response fields are not universally zero.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: memo edits and cash/discount redistribution on one receive payment and a two-bill check. Receive25/5 ->20/10; bill cash25/25 and discounts5/5 ->20/30 and10/0. Existing invoice credit20 and bill credit10/10, settled balances, full queried payment/document/credit fields and journals independently verified. No credit reduction/unapply, partial applications, different-document reallocation, card modifier, multicurrency or other releases proof. See liveTestCoverage.paymentDistributionModifierChecks and paymentDistributionModifierContract."
+  },
+  {
+    "id": "payment-reallocation-retains-original-credit-outside-payment-return",
+    "operations": [
+      "ReceivePaymentMod",
+      "BillPaymentCheckMod",
+      "ReceivePaymentQuery",
+      "BillPaymentCheckQuery",
+      "InvoiceQuery",
+      "BillQuery",
+      "CreditMemoQuery",
+      "VendorCreditQuery",
+      "BillToPayQuery"
+    ],
+    "summary": "A replacement cash/discount distribution can omit the original document while its applied credit remains. Fresh payment queries then show only replacement applications, so missing original credit in the payment return does not prove release. Verify exact original/replacement documents, reverse credit links and BillToPay balances. Bill/VendorCredit OpenAmount equalled aggregate vendor balance in this control, not individual remaining/available credit.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: two same-party reallocation controls, original cash30/discount5/credit20 ->remaining45, replacement cash30/discount10 ->remaining60 while original retains credit20 ->80. All eight normalized before/after states, complete queried lines/unrelated fields, AppliedAmount, bidirectional credit links and journals independently verified. Vendor-credit OpenAmount changed145->140 with combined vendor bill balances despite unchanged consumed credit. No cross-party/account, credit unapply/additional credit, deposited/reconciled payments, multicurrency, card modifier or other releases proof. See paymentReallocationContract and liveTestCoverage.paymentReallocationChecks."
+  },
+  {
+    "id": "additional-modifier-credits-require-document-credit-verification",
+    "operations": [
+      "ReceivePaymentMod",
+      "BillPaymentCheckMod",
+      "ReceivePaymentQuery",
+      "BillPaymentCheckQuery",
+      "InvoiceQuery",
+      "BillQuery",
+      "CreditMemoQuery",
+      "VendorCreditQuery",
+      "BillToPayQuery"
+    ],
+    "summary": "Modifiers accepted an additional SetCredit-only application alongside the complete retained cash/discount distribution, without resubmitting original credits. Fresh payment returns omitted the new credit-only application, while exact document/credit queries verified it. UnusedCredits tracked the new customer credit10->0. Bill/VendorCredit OpenAmount reflected net vendor balance130 before and after, rather than unpaid bill total140->130 or available credit10->0. Use exact credit/document queries and BillToPay for balances.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: original credit20 retained plus new10 fully consumed; original invoice/bill remaining80->70 and replacement60 unchanged with cash30/discount10. Eight normalized states, full unrelated queried fields, bidirectional links, available-credit readback and journals independently verified. No standalone SetCredit-only modifier omitting existing cash, original-credit modification/unapply, cross-party/account, card modifier, deposited/reconciled payments, multicurrency or other releases proof. See additionalCreditModifierContract and liveTestCoverage.additionalCreditModifierChecks."
+  },
+  {
+    "id": "applied-payment-credit-deletion-and-missing-id-warnings",
+    "operations": [
+      "TxnDel",
+      "ReceivePaymentQuery",
+      "BillPaymentCheckQuery",
+      "CreditMemoQuery",
+      "VendorCreditQuery",
+      "InvoiceQuery",
+      "BillQuery",
+      "BillToPayQuery"
+    ],
+    "summary": "Deleting synthetic receive/check payments released cash/discount applications while independently linked credits remained consumed on original documents. Deleting those credit transactions then released their linked document balances. Exact deleted-ID queries returned empty warning500 naming the missing ID; preserve warning outcome and overall success=false, correlate successful delete acknowledgement/journal and fresh surviving documents, and never replay deletion on that warning. TxnDel data contains top-level type/ID/time scalars with optional reference number.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: two payments and four applied credits deleted; replacement documents60->100 while original70 retained credits, then originals70->100 after credit deletion. Twelve normalized states, complete unrelated queried fields, reverse credit links, exact delete IDs/types and journals independently verified. Initial verification halted on expected warning500; deletions never replayed. No voiding, original-document deletion, deposited/reconciled payments, multicurrency, general credit-unapply recipe or other releases proof. See appliedPaymentCreditDeletionContract and liveTestCoverage.appliedPaymentCreditDeletionChecks."
+  },
+  {
+    "id": "applied-check-card-payment-and-credit-voiding",
+    "operations": [
+      "TxnVoid",
+      "BillPaymentCheckQuery",
+      "BillPaymentCreditCardQuery",
+      "VendorCreditQuery",
+      "BillQuery",
+      "BillToPayQuery"
+    ],
+    "summary": "Voiding fresh check/card payments retained transaction identities with Amount0 and VOID memo, cleared cash/discount applications, and preserved independent consumed vendor credits. Voiding the vendor-credit transactions retained their identities with CreditAmount0 and expense line Amount0, cleared credit links and restored bill balances. ReceivePayment is absent from the documented TxnVoidType enum and is not inferred from payment deletion.",
+    "evidenceScope": "Test.QBW QBD2024R21 US protocol13: two bills100, initial cash30/discount5/credit20 ->remaining45; payment void ->80; credit void ->100. Six normalized bill states, queryable voided IDs, exact acknowledgements/types/timestamps, bidirectional credit links, complete unrelated queried fields and journals independently verified. No other void types, deposited/reconciled payments, multicurrency or other releases proof. See appliedPaymentCreditVoidContract and liveTestCoverage.appliedPaymentCreditVoidChecks."
+  }
+]

@@ -1,0 +1,4378 @@
+{
+  "retrieved": "2026-10-05",
+  "scope": "Element/attribute path comparison only; examples do not prove complete types, country/version/cardinality constraints or enums.",
+  "operations": [
+    {
+      "operation": "AccountAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/accountadd.html",
+      "sourceSha256": "fa6dcdc496c5bebd75a6c4aa63b8a735cba938dd7a920b09e75d8f6db686b0db",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "AccountMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/accountmod.html",
+      "sourceSha256": "cc0ba5e80b23b599637355ca2158893c90e6f104f5dd9075c24775e5624c87bc",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "AccountQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/accountquery.html",
+      "sourceSha256": "72f9a2983ce593e5f13d692efd0317e6a6765ff80ce762fd27bf38d61b103ced",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "AccountTaxLineInfoQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/accounttaxlineinfoquery.html",
+      "sourceSha256": "1bc32323c8bb1d36e888df3945631f9ba3f1282c70655afba09cd266bbcb39a3",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "AgingReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/agingreportquery.html",
+      "sourceSha256": "298df15ba4839d7a32d8bce6b4630460b3facc8f6f1da291a930bd65c5833597",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "ARRefundCreditCardAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/arrefundcreditcardadd.html",
+      "sourceSha256": "acdfb5d28b04991e0cfccdafa1d14c629a1eaf5650325940d21ae8c77d04cb90",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ARRefundCreditCardQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/arrefundcreditcardquery.html",
+      "sourceSha256": "6cfd1fef14654da0462eb583d1526e5e24a80b21bc0f34daca8847368ea9337b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "BarCodeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/barcodequery.html",
+      "sourceSha256": "efedf69348ef8a66c585dccc0924f22f1f60a6e5f6881e4fc01b2042a0036434",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "BillAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billadd.html",
+      "sourceSha256": "6231e89a88423702bd21b687129e9a441721a11ac86cada9bfe9ec5c577a8737",
+      "missingPaths": {
+        "request": [],
+        "response": [
+          "/BillAddRs/BillRet/IsPending"
+        ]
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "BillingRateAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billingrateadd.html",
+      "sourceSha256": "0ee01d6103d445ee26d7f3302057b779c6e61e442ba20df170d0c13bab65f7ea",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "BillingRateQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billingratequery.html",
+      "sourceSha256": "7b247248de0d754f90d7c9b058719fde65e339cb5c66e558f5321e816d1cab22",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "BillMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billmod.html",
+      "sourceSha256": "fbd6c6c5145f10f5a3c2133ed5ae32ee1b01bb0a6e84da0a5998b17e3b9d7bcf",
+      "missingPaths": {
+        "request": [],
+        "response": [
+          "/BillModRs/BillRet/IsPending"
+        ]
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "BillPaymentCheckAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billpaymentcheckadd.html",
+      "sourceSha256": "ed810066dcb200656b86b2844bcf31d052520944c73015849af14e80a91256f2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 3
+      }
+    },
+    {
+      "operation": "BillPaymentCheckMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billpaymentcheckmod.html",
+      "sourceSha256": "a972de77c069b13035ccac80dd5564f5385f8da9caea7dc762b30dc419cc1d3e",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "BillPaymentCheckQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billpaymentcheckquery.html",
+      "sourceSha256": "21fb3341365a4fe84ed6c4f86ab0a7d8845037132dff439b6a40ab7f12938287",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "BillPaymentCreditCardAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billpaymentcreditcardadd.html",
+      "sourceSha256": "16e8d436e40e20b7909a8076da5f43477581d97bce530d17bb1b2ef26f3a9c91",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 3
+      }
+    },
+    {
+      "operation": "BillPaymentCreditCardQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billpaymentcreditcardquery.html",
+      "sourceSha256": "0e3c6f0d73c47cdeba8fde1bce668ce114d55a2071cabbee911a9bf0b7d710d9",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "BillQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billquery.html",
+      "sourceSha256": "17f7bd2086664616a7848dddc35d1bb84e615b0dbd9217570c39386563bb031f",
+      "missingPaths": {
+        "request": [],
+        "response": [
+          "/BillQueryRs/BillRet/IsPending"
+        ]
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "BillToPayQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/billtopayquery.html",
+      "sourceSha256": "60964604b32286128fc0b305a6e2ced341f69be4c3e2523e36dbe59002bb659e",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "BudgetSummaryReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/budgetsummaryreportquery.html",
+      "sourceSha256": "5096ba7be09987f028fb686dcb5a05021c1795dc650231d680460780a338a920",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "BuildAssemblyAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/buildassemblyadd.html",
+      "sourceSha256": "64de9c0736a10c092716cd0a2b2cfed83dff7c19deea6d12cacf82da50074d56",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "BuildAssemblyMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/buildassemblymod.html",
+      "sourceSha256": "8201f4b83d04187808bf991fc51a4ddbfe38f98dfe3f59fbc9d2c8dc998e8a2f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "BuildAssemblyQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/buildassemblyquery.html",
+      "sourceSha256": "f4b00b498cb6588e890cb5cd1b07d9874608f9177d62f2ecdf7b030369cc7d76",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ChargeAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/chargeadd.html",
+      "sourceSha256": "47ed8fdaf4c8cba8b75adc9478f8611a4fc1db835e0ae2e05495d484529f7325",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ChargeMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/chargemod.html",
+      "sourceSha256": "bed3bc3aa4871e2ad10b7924083cb4bd4d5630f36d1d9b7573613c37266a600b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ChargeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/chargequery.html",
+      "sourceSha256": "7d6ace7db855e034a201ac66862f5b7fc7e633ddbe4fa9a4675c8648cba66749",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "CheckAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/checkadd.html",
+      "sourceSha256": "7bed88db1a68ce8a7bb70850239a0313009f629543060e921abdda0334634e3e",
+      "missingPaths": {
+        "request": [],
+        "response": [
+          "/CheckAddRs/CheckRet/IsPending"
+        ]
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CheckMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/checkmod.html",
+      "sourceSha256": "0d3c9f71b995933ed9672a4ab59621feb78feadd59ff3f82de9306c917eb6263",
+      "missingPaths": {
+        "request": [],
+        "response": [
+          "/CheckModRs/CheckRet/IsPending"
+        ]
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CheckQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/checkquery.html",
+      "sourceSha256": "832ce1096a4b71ee73a9c2555fb91722efa41d464ff1b88411e9f299b038f7aa",
+      "missingPaths": {
+        "request": [],
+        "response": [
+          "/CheckQueryRs/CheckRet/IsPending"
+        ]
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ClassAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/classadd.html",
+      "sourceSha256": "3ac1bbbd3dd20d46a63794e52db887fe3c7e6093d5ffeee208ae39546c0d1f98",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ClassMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/classmod.html",
+      "sourceSha256": "3f1a7e9b58ecfec8a81a67bca40925ae1a57f3d478e943e1282e7112e1a4ec53",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ClassQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/classquery.html",
+      "sourceSha256": "d3d6f1687fca6491058c715583ded81ab63c2696be7c59f5d2fbdedb84486d86",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "ClearedStatusMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/clearedstatusmod.html",
+      "sourceSha256": "b4d978b77662e9f868be0bba58317abecf1f1ab5193ca279ae99b5f0e855f30b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CompanyActivityQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/companyactivityquery.html",
+      "sourceSha256": "8d53fbaac6f098c7531c20ee28a192cc02c2ead5cb97bb9a5e3837626c4ea987",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CompanyQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/companyquery.html",
+      "sourceSha256": "0e8065be68175d4220355aae101def0d7e4ea225e75b2f19dd9ee01f54fa654e",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CreditCardChargeAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/creditcardchargeadd.html",
+      "sourceSha256": "42486371f1970596eb2da10849f5b84d35bcddadffe5285218692adf36509fb6",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CreditCardChargeMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/creditcardchargemod.html",
+      "sourceSha256": "172333ddf6ebcb10a9fb6fe4a79df845a89d146eca1b70b4eb8dc9abc65cd8d0",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CreditCardChargeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/creditcardchargequery.html",
+      "sourceSha256": "e99f049759dd7f96e3fbf349fadc15ec6435418409dddb740a4c282cce262f84",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "CreditCardCreditAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/creditcardcreditadd.html",
+      "sourceSha256": "96e418ad096bea74681180d87e1ba43d0a12b3e245410fc68612fb7f2f60991f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CreditCardCreditMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/creditcardcreditmod.html",
+      "sourceSha256": "f591274fb1cdf9e3249fd382d0e62b76dd230c39973266958758168730bd9a47",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CreditCardCreditQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/creditcardcreditquery.html",
+      "sourceSha256": "3a5f65ec163ba8eff41a52f07af922524ecacdac57caac0390fc549b2ac88390",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "CreditMemoAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/creditmemoadd.html",
+      "sourceSha256": "a7c73dd43146927c48ec4efd95379bfd2a248927f3d413633e2c1ffee922d275",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CreditMemoMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/creditmemomod.html",
+      "sourceSha256": "35a682aef43dd0daa3d9da1a14b6a813a55a6d879b1e74b3d5a8f0a52d813978",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CreditMemoQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/creditmemoquery.html",
+      "sourceSha256": "617efd8a4f38bfeb25bd52ecd6b01315e1e885e94aaa4a19fe34d7bd4b27bd20",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "CurrencyAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/currencyadd.html",
+      "sourceSha256": "a98f6ccea7f5411cb74429e7b52fcab63e941bc38be8a7cebc617895bca07d01",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CurrencyMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/currencymod.html",
+      "sourceSha256": "47b9ee9fa2e596c0641115d326ee30056f3f53f8f2e7c0478f156d138f577a9f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CurrencyQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/currencyquery.html",
+      "sourceSha256": "4d14258472d61292fb12423f693777e3c8948e114d1c84512c437ae9b02a5592",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "CustomDetailReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/customdetailreportquery.html",
+      "sourceSha256": "2ad2216c7422bea03c7a6074da6016528dd6bfd4386d7999a0b3f788f9ff7e6d",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "CustomerAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/customeradd.html",
+      "sourceSha256": "ef0976533ba5666fedc1fb6fee643ddbef66addc6f663c2689edb5b16e955dde",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CustomerMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/customermod.html",
+      "sourceSha256": "a41d12b56ced96f241eb753e182b4fd6588e5630b7618a22bf09bae32cc66333",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CustomerMsgAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/customermsgadd.html",
+      "sourceSha256": "30b17a521e712e9d609b31cffe7948995ea73ed1de8d6722503ef2db8442bdb3",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CustomerMsgQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/customermsgquery.html",
+      "sourceSha256": "1ef80768fd4ac0da12c4c7de02b72a45382b8ff80573a394636aacbdeed0f050",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "CustomerQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/customerquery.html",
+      "sourceSha256": "643a5f74de2eeaaf169b93dd55a88be38aa542a9812450eac8dd587e29567ff9",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "CustomerTypeAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/customertypeadd.html",
+      "sourceSha256": "8ff5f303807f5f8d9466c564bb9afd421c012f3b13761a6c3b5bd68ba3cfa69e",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "CustomerTypeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/customertypequery.html",
+      "sourceSha256": "f5ba7a8698a88b65e6e3173fe3451ff5e244929c2dd285dce73de52879ffd29b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "CustomSummaryReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/customsummaryreportquery.html",
+      "sourceSha256": "fa9df0c8a7d99c786c6b37d582e042c768bd6b48953d577ef30b4ea0ac9d39d1",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "DataEventRecoveryInfoDel",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataeventrecoveryinfodel.html",
+      "sourceSha256": "01eb8ea373101ddddd9ac6ae1d5b717f5d12d146b6a9000102c64638168db4ec",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DataEventRecoveryInfoQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataeventrecoveryinfoquery.html",
+      "sourceSha256": "c01f23b44f8bc068b01b07b1d824b5c045e2ab23f92a7434b0ab6e2739de4874",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DataEventSubscriptionAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataeventsubscriptionadd.html",
+      "sourceSha256": "4dfb0d8b36c3711fad5f557dec9f5a4d585db20b720d2b3e10f6e83ea1e7f791",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DataEventSubscriptionQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataeventsubscriptionquery.html",
+      "sourceSha256": "109dc0d42b6ddb38eabf8e2be01f59ce648db403a723c0379e09074ab8f1fd42",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DataExtAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataextadd.html",
+      "sourceSha256": "72cbb5366327384e3c2487c5e0ff3df71855e7d538df5d47804cce086792f376",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DataExtDefAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataextdefadd.html",
+      "sourceSha256": "bf6b1514fb54fb9c76f03e551a9a6b3d0e666e12f31450e2e962ea04e6dd8c51",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DataExtDefDel",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataextdefdel.html",
+      "sourceSha256": "e2c6d7908104d6738c54281c3a7127f739a02f6abe59b44a702b59be0971a4f7",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DataExtDefMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataextdefmod.html",
+      "sourceSha256": "9decfad223f1a34b7adee37005d24e12d08c1179e5276db940538e1bffb651c2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DataExtDefQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataextdefquery.html",
+      "sourceSha256": "eaf5af05848c557274fda4711af9b11452a7529315b6d685f67a70d6bf7ef12b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "DataExtDel",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataextdel.html",
+      "sourceSha256": "7aa8af7296069e4abeaf815fce773e04d5bc0a77fc04b0bf77246078c03eab10",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DataExtMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/dataextmod.html",
+      "sourceSha256": "8a5076536b40eef83d8b551711266f966062d1120224c6633d0ecda06bbb33c2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DateDrivenTermsAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/datedriventermsadd.html",
+      "sourceSha256": "f9c99eeb8b4171748c0a03b70cba07693e9e8d0ffeace9d0a3556747ecf67930",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DateDrivenTermsQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/datedriventermsquery.html",
+      "sourceSha256": "9753554c61f998d015fa6c7652b2645480cbfe9544cb79feba610f9576f91161",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "DepositAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/depositadd.html",
+      "sourceSha256": "f0bba594c6b6715b8992dc6bc890f0a023fe13dbc563fbe2677e2033c5f8003b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 5,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DepositMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/depositmod.html",
+      "sourceSha256": "f694700d9cf4923687ea3798aa5f1a67a4f6052a0976372ee279fea536c8b963",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "DepositQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/depositquery.html",
+      "sourceSha256": "da115cf88d0f6c2ff71fdbdf660881eb1a29837a73d935c7e08391f670bce800",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "EmployeeAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/employeeadd.html",
+      "sourceSha256": "4e43cae6ffa4d9e8ade69c46e79e3fed6632597d63c5e7a6cef11dc7c4a176a1",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "EmployeeMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/employeemod.html",
+      "sourceSha256": "97f4d616e9218e2bb533fec4957cb2348f1828b8df8c25721d20593a495b1d55",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "EmployeeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/employeequery.html",
+      "sourceSha256": "83b1566284c83ddd9ef287bec1d8f197689a1ab5286f2eab7fa985e0b5769c57",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "EntityQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/entityquery.html",
+      "sourceSha256": "e7b7532d30714f38a39b204c34c732d9a2046d80c792387366c345c1ac0815ed",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "EstimateAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/estimateadd.html",
+      "sourceSha256": "ebc967c612c8d8bd36e6d881cafedca2a46011600486f19840ba35cd37838af4",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "EstimateMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/estimatemod.html",
+      "sourceSha256": "557f5eeb89f36242be01d4117590b5a09a116ca06820712f28e5f519a8c26455",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "EstimateQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/estimatequery.html",
+      "sourceSha256": "dcde5d46a2c07ae3cb15e0a1e0041e99650842b390417710bf3ef50e520102ec",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "Form1099CategoryAccountMappingMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/form1099categoryaccountmappingmod.html",
+      "sourceSha256": "f3c4cc8c35aaf5bed6683d1f33a042bdca6654507b406b1f33db4d23c31ad714",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "Form1099CategoryAccountMappingQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/form1099categoryaccountmappingquery.html",
+      "sourceSha256": "d7cff38ccee738b122c3f6233b5777c28242d5c1b8bc59274bf80f7e5b38007f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "GeneralDetailReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/generaldetailreportquery.html",
+      "sourceSha256": "38d9ad6a2fce4a6abbb168576a6d9a7a67bccf8faec0c3095c08677f35ed357d",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "GeneralSummaryReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/generalsummaryreportquery.html",
+      "sourceSha256": "db87cef5143b2b6eb5882459c7f073b332e815a69c1501658b97d8824f3eeed5",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "HostQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/hostquery.html",
+      "sourceSha256": "cd810dc839a972acfd8aa01f4800957a5fe211c4f4ea7b942131823824971941",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "InventoryAdjustmentAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/inventoryadjustmentadd.html",
+      "sourceSha256": "2592980a18760164fc78d9cb67d95791f3dc9491deb450c01df89c955d0bc39c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "InventoryAdjustmentMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/inventoryadjustmentmod.html",
+      "sourceSha256": "6e831a9d3977625ef4dcbf74abb832c1d3e89afe129a625e7d5c0f27f164b8cc",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "InventoryAdjustmentQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/inventoryadjustmentquery.html",
+      "sourceSha256": "2cd6b195dfd282b9e0d1dd3dfc0c8555216988b4b0c1c420b0d47f16c59c78a2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "InventorySiteAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/inventorysiteadd.html",
+      "sourceSha256": "07d7a79ff482bc347eef75b297a7b34a0c58faa178616b8cd4b611aa41fb565f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "InventorySiteMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/inventorysitemod.html",
+      "sourceSha256": "5f4b6fa2034fd7123122a345ab38fe5a3bf353afe8ad644537774ed0048b8664",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "InventorySiteQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/inventorysitequery.html",
+      "sourceSha256": "b2b394e43b636ec85e5b1b9f87d535eaf5b7a01afb4cf47d20611c0de1c329eb",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "InvoiceAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/invoiceadd.html",
+      "sourceSha256": "eb4c711a12b90a3311613081c00a895bc17ddf04649bda927f87faffb4dc9c31",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 3
+      }
+    },
+    {
+      "operation": "InvoiceMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/invoicemod.html",
+      "sourceSha256": "5c90b5fcd7f011ba21681479157d5564415b46c31333ae7c4ade3cd3c71cfebe",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "InvoiceQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/invoicequery.html",
+      "sourceSha256": "74ff91db375428bb0a964986545e7be4dafc60d59c3db5f2d0593e9ff2ee22a3",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemAssembliesCanBuildQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemassembliescanbuildquery.html",
+      "sourceSha256": "fc2f627ae04f1b7c88703153f2a0d2bf248466e7a8a0f7a6ba74daee77a29f77",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemDiscountAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemdiscountadd.html",
+      "sourceSha256": "a5ed39235981ccf635b2447c2c646f0dd5c86c0f323861c7146249758d56589a",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemDiscountMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemdiscountmod.html",
+      "sourceSha256": "c1a826670a93a084206d534c0f563279913f400cc17940264f0025b2c350bc5c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemDiscountQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemdiscountquery.html",
+      "sourceSha256": "3b265f82571ddbe8f4f318f9c1ed0d05356c27c844d2ca46dc4cfb09562a054f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemFixedAssetAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemfixedassetadd.html",
+      "sourceSha256": "67f3b4539473eabd000f86c9d5dc647e0653b688cdf1de6ed2d8bee945e8f100",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemFixedAssetMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemfixedassetmod.html",
+      "sourceSha256": "bfb1fc530483ca6273a66acf1f815dcf36c026a2d11dff6f1c8bc230c9c0ad10",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemFixedAssetQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemfixedassetquery.html",
+      "sourceSha256": "dc4e8af688e164fdce742408a12e8c636395b7b2337d2d96c7e5eb2938e555ba",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemGroupAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemgroupadd.html",
+      "sourceSha256": "5325dcb43ea560950c0701091f4b8c93f878bc11c4fe3af3858f8026b9d0f2fb",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemGroupMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemgroupmod.html",
+      "sourceSha256": "a1d66cd24f3ed7b79cef6017e8b8deac7c034ad258fc0cf575fc8645d0b3ee9f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemGroupQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemgroupquery.html",
+      "sourceSha256": "da3036ffcb3efd8e4308ac738da02de95ddf3f5b2e380dbe6181924e1677c0c4",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemInventoryAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/iteminventoryadd.html",
+      "sourceSha256": "d61e6a1f235a06e2f0fad887dd96712f1869386b28a8d987017219fd28b991b8",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemInventoryAssemblyAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/iteminventoryassemblyadd.html",
+      "sourceSha256": "6e8d89a823913d8a93d008554d35a8e2b5179aac1657868189cd6c21b762d8b3",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemInventoryAssemblyMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/iteminventoryassemblymod.html",
+      "sourceSha256": "33e89a5d72ed429cfe4c393d468a86be87d2df8f8cac5beb4058a18b1b1cf0ae",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemInventoryAssemblyQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/iteminventoryassemblyquery.html",
+      "sourceSha256": "6aa10f7984f410ec6e7ee46236de42f63ad9b257116d52b1ff69123d24b1b5db",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemInventoryMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/iteminventorymod.html",
+      "sourceSha256": "0c4f4d77a157a9e80a1e719047335a9825b1c9de26abd1beae34709416925ccb",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemInventoryQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/iteminventoryquery.html",
+      "sourceSha256": "afd6e7549bd8261a90d23f66f5d740c48d189d8670c697195addf0c8a6144f0e",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemNonInventoryAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemnoninventoryadd.html",
+      "sourceSha256": "fb39dcc2528b5d870284cadfb95ce0becddf754fea2c59bafc410e5a69401595",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemNonInventoryMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemnoninventorymod.html",
+      "sourceSha256": "72187efbd279c33fc401ccdf71503d5fd98ad7dcdb59d313fbd09478cb638639",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemNonInventoryQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemnoninventoryquery.html",
+      "sourceSha256": "b8454b472dc96ea79be3c02354335eefb81a6dfc01b205bff895569b94c39e81",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemOtherChargeAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemotherchargeadd.html",
+      "sourceSha256": "ed29f20616a11b26bc1a313dd8b2f9623fc9d9c3e6cb10ec1da3908b76c6843c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemOtherChargeMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemotherchargemod.html",
+      "sourceSha256": "703f6c136a4b76560c37e1db0c68fc9f686d0607ba3bcd1d4dc11ce71f384e8e",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemOtherChargeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemotherchargequery.html",
+      "sourceSha256": "2fd50e238156602cfaf2c487b0efbaa5f1aee094d4e87022af94005dc770d7b3",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemPaymentAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itempaymentadd.html",
+      "sourceSha256": "4a2704722458f3471a0de3274d289729c574dd87d3dc55c9866c0bb3250c4875",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemPaymentMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itempaymentmod.html",
+      "sourceSha256": "8408e04a43b1d58ff6c8dca05473254df7b29aecb4c083c8600cc79bf6e780e8",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemPaymentQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itempaymentquery.html",
+      "sourceSha256": "8aec537f38235f3ee872df463718b366d0d810d9bcc9c52efa51370432aeb3d4",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemquery.html",
+      "sourceSha256": "ff2c0f772bf88bc53b457e68120bafad4e06e3b413be74269ed511a9bc2e0fe6",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemReceiptAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemreceiptadd.html",
+      "sourceSha256": "d1795e5d2e6de6b9e65be3f38ac12b2dc21628929a2c02eb96945e68c84a1eab",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemReceiptMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemreceiptmod.html",
+      "sourceSha256": "3fe658de90c9e53a325c7562182199e57016e856578b148076424039c57d1970",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemReceiptQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemreceiptquery.html",
+      "sourceSha256": "248a690f45c8084a9b0eba9a3b94a7d05b78d63799e5942d4204f210666b1597",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemSalesTaxAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsalestaxadd.html",
+      "sourceSha256": "7085d54158e372a40e44a01c14007f2baa5ae3f08f352faee5af597c55f924bb",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemSalesTaxGroupAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsalestaxgroupadd.html",
+      "sourceSha256": "e08b9e1525604bbc61fe945e64e5e994fb6b165e13515363d982a78f886312e4",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemSalesTaxGroupMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsalestaxgroupmod.html",
+      "sourceSha256": "240c095817abbe2b9156533e6cb2394285e2271b284a52ed926b8513ccbf6d03",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemSalesTaxGroupQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsalestaxgroupquery.html",
+      "sourceSha256": "d9a676f12e958da100c36e598ad2f1eeafc93de8bc2646cf469906ef94ea1802",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemSalesTaxMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsalestaxmod.html",
+      "sourceSha256": "38485cca8bb8514e387bb260e6d2471cfd2fd849e3089148d444a950613266ac",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemSalesTaxQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsalestaxquery.html",
+      "sourceSha256": "4bf0794e523e2347263d1e7e50510bf9b729bd87100a3645b4b2add44d403326",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemServiceAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemserviceadd.html",
+      "sourceSha256": "3782b6f7d6cc516f1b93f9541d86d7363983896fa0c5c7ebe4f908f2d1c034f2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemServiceMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemservicemod.html",
+      "sourceSha256": "adebbba4f23e557aeac36dbdb9cf8b146cfb39381b8dca92f32079c88f0a55d9",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemServiceQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemservicequery.html",
+      "sourceSha256": "936d4f3baac0e96526bb021310524dc086f9da1e46c00074388586388a81de89",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemSitesQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsitesquery.html",
+      "sourceSha256": "786b523e0d67bc7671c2272260aaea8bb5b23a9631f01d2c03cb84a96349ea8f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ItemSubtotalAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsubtotaladd.html",
+      "sourceSha256": "d29f2ce05215860e3bb919ecc166471843847d5d34193485733154760a7d6cbb",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemSubtotalMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsubtotalmod.html",
+      "sourceSha256": "d42becf6355fe9b52efb49cac3d284a4d5b2226c7cf75b0d7511d246dc6858d2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ItemSubtotalQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/itemsubtotalquery.html",
+      "sourceSha256": "b3a55fc406de4dc8901e49f053fcc5997a31272ca4cc3b5233ce80a15441043a",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "JobReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/jobreportquery.html",
+      "sourceSha256": "d2dacea53f77135569e8c0483ac82ff203212c75256592b8b771ef33b34ea91c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "JobTypeAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/jobtypeadd.html",
+      "sourceSha256": "06f92bbd18d8e36c2fbb40da90bd04af396a2b647c694aca13ea1d3681813c1f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "JobTypeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/jobtypequery.html",
+      "sourceSha256": "cfd7fe460a8557015704a566ee7aa6a87f69e2ad7de1b1a4ebee0055a6b1e6a9",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "JournalEntryAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/journalentryadd.html",
+      "sourceSha256": "236f64ee5021da9def73505551a365ec4a9f2e9036e85427c9aded50be5e802d",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 5
+      }
+    },
+    {
+      "operation": "JournalEntryMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/journalentrymod.html",
+      "sourceSha256": "707552282f8997a3b9aedf3e07da3787018dce542dc67e605eb25b78a892fe0f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 5
+      }
+    },
+    {
+      "operation": "JournalEntryQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/journalentryquery.html",
+      "sourceSha256": "aa2ddbda768db35eb6bd5f77b68a4d8af9016a3d89deb5c9ce38718ca1b5a6c2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 8
+      }
+    },
+    {
+      "operation": "LeadAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/leadadd.html",
+      "sourceSha256": "93764bb295f915569fae5bf5867f137735c1fd4130147d2ba0b1189f8a737c2c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "LeadMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/leadmod.html",
+      "sourceSha256": "5608e15a598bff04dde0cdce6e3c0eee7ed15c20c2432e413b5ac88108811558",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "LeadQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/leadquery.html",
+      "sourceSha256": "1b412781e08a17dc01c7ce95eb58ea4ff44e3f1cdfd350e6bd8313e1ad9101df",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ListDel",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/listdel.html",
+      "sourceSha256": "05f283ba4779d29dad89456bd2290f924b5b158f7e70af9798abd60d94ea010f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ListDeletedQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/listdeletedquery.html",
+      "sourceSha256": "4e3b67e2061fc10bea32f6cd03a6a8c25696066f7aa90da5370224a0809f8595",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "ListDisplayAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/listdisplayadd.html",
+      "sourceSha256": "c50a11aef7f3185cb47edbc1f4dcc9fafa7c9cd1fd7f945b7fc62815669a726f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ListDisplayMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/listdisplaymod.html",
+      "sourceSha256": "6c454e407aa6bdb2a205554f05ff72cf5722bea4e2a813943cd8f22dce0254af",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ListMerge",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/listmerge.html",
+      "sourceSha256": "9f408caac4110f1b9519d51e9cb8720b6ea9db5f692df7a72da927deba947f80",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "OtherNameAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/othernameadd.html",
+      "sourceSha256": "98e53ad0fb1f434ec2c1f5db430fc9f07389af1861bea8a32601a11f5f759963",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "OtherNameMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/othernamemod.html",
+      "sourceSha256": "1e5227be345c0c4085a6cf67e97aa31b61d838df772a234c372b919974fd343b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "OtherNameQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/othernamequery.html",
+      "sourceSha256": "064e102b38d1dc6ffcbf66eca246785505f846f516a46be1956a8a28e8fa051c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "PaymentMethodAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/paymentmethodadd.html",
+      "sourceSha256": "1ff0a3a0764c1514a309b8760035cc96e2fe95894b0908347a214740111ce4ef",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "PaymentMethodQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/paymentmethodquery.html",
+      "sourceSha256": "4ef1071e45e0a4a80f30f630c020024537349b356756064179fe806d016facec",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "PayrollDetailReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/payrolldetailreportquery.html",
+      "sourceSha256": "da5d66cff38d5a1a28bab8404f701c16b8c147ff36e4d16cca1cc5dac5d839ba",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "PayrollItemNonWageQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/payrollitemnonwagequery.html",
+      "sourceSha256": "32cc6a0f0f7ed361da9b80e04e0d7f61e319b1205296a3d84a54d766a7112152",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "PayrollItemWageAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/payrollitemwageadd.html",
+      "sourceSha256": "d3ecc6b62ba4d34a6489145e2c2c9a1dac12e651c6ce3be604bae6f16ab2dbe3",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "PayrollItemWageQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/payrollitemwagequery.html",
+      "sourceSha256": "776a60cf2403ac9f4fd69ed29158d9c60437e8dd8c59f1658cf4eb3107337d73",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "PayrollSummaryReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/payrollsummaryreportquery.html",
+      "sourceSha256": "a91537e7590033b64766f1dc1d17af706d59559c6a36a9ba3dd3a0469b4bdc34",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "PreferencesQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/preferencesquery.html",
+      "sourceSha256": "546d30b7c47c55e3598932db9b67decc559a363ecac76378f33ec4f7a02aafe2",
+      "missingPaths": {
+        "request": [],
+        "response": [
+          "/PreferencesQueryRs/PreferencesRet/ItemsAndInventoryPreferences/IsInventoryExpirationDateEnabled"
+        ]
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "PriceLevelAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/priceleveladd.html",
+      "sourceSha256": "b505fcacd04de02bcca934926396303c74a8ebffce4854d8ed581ebacbbb3f44",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "PriceLevelMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/pricelevelmod.html",
+      "sourceSha256": "c8d5471c9d6ab817fbb9e5169e54d0272ff38f6432636b718775900a0ef9dc65",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "PriceLevelQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/pricelevelquery.html",
+      "sourceSha256": "8684cc66fc509c06b5bedf94d02c1b7efe008c100239b61ed6aea48304624eb9",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "PurchaseOrderAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/purchaseorderadd.html",
+      "sourceSha256": "c84cc3b3a5111cd567f505abe9c8ceb540f49e4428bceedd156c4f8f2a851d4f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "PurchaseOrderMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/purchaseordermod.html",
+      "sourceSha256": "5e715cf8d71e69da33390433ec3b1424b9aa8662db092b2413caa70f1af3624c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 4,
+        "response": 3
+      }
+    },
+    {
+      "operation": "PurchaseOrderQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/purchaseorderquery.html",
+      "sourceSha256": "03b7e1d1a2f4cf8d225c8d8df1fc08a52726aaa4b47200737235b5d7199d62bf",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "QBXMLEvents",
+      "state": "missing_legacy_operation",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/qbxmlevents.html",
+      "sourceSha256": "97d1f4ac576c31bbfa226e68a6320e066759d123c66945fcca9b650568523955",
+      "missingPaths": {
+        "request": [
+          "/QBXMLEventsRq"
+        ],
+        "response": [
+          "/QBXMLEventsRs",
+          "/QBXMLEventsRs/DataEvent",
+          "/QBXMLEventsRs/DataEvent/CompanyFilePath",
+          "/QBXMLEventsRs/DataEvent/DataEventRecoveryTime",
+          "/QBXMLEventsRs/DataEvent/HostInfo",
+          "/QBXMLEventsRs/DataEvent/HostInfo/Country",
+          "/QBXMLEventsRs/DataEvent/HostInfo/MajorVersion",
+          "/QBXMLEventsRs/DataEvent/HostInfo/MinorVersion",
+          "/QBXMLEventsRs/DataEvent/HostInfo/ProductName",
+          "/QBXMLEventsRs/DataEvent/LastCondenseTime",
+          "/QBXMLEventsRs/DataEvent/LastRestoreTime",
+          "/QBXMLEventsRs/DataEvent/ListEvent",
+          "/QBXMLEventsRs/DataEvent/ListEvent/AfterMergeListID",
+          "/QBXMLEventsRs/DataEvent/ListEvent/ListEventOperation",
+          "/QBXMLEventsRs/DataEvent/ListEvent/ListEventType",
+          "/QBXMLEventsRs/DataEvent/ListEvent/ListID",
+          "/QBXMLEventsRs/DataEvent/TxnEvent",
+          "/QBXMLEventsRs/DataEvent/TxnEvent/RefNumber",
+          "/QBXMLEventsRs/DataEvent/TxnEvent/TxnEventOperation",
+          "/QBXMLEventsRs/DataEvent/TxnEvent/TxnEventType",
+          "/QBXMLEventsRs/DataEvent/TxnEvent/TxnID",
+          "/QBXMLEventsRs/UIEvent",
+          "/QBXMLEventsRs/UIEvent/CompanyFileEvent",
+          "/QBXMLEventsRs/UIEvent/CompanyFileEvent/CompanyFileEventOperation",
+          "/QBXMLEventsRs/UIEvent/CompanyFileEvent/IsAutomaticLogin",
+          "/QBXMLEventsRs/UIEvent/CompanyFileEvent/IsNewCompany",
+          "/QBXMLEventsRs/UIEvent/CompanyFilePath",
+          "/QBXMLEventsRs/UIEvent/HostInfo",
+          "/QBXMLEventsRs/UIEvent/HostInfo/Country",
+          "/QBXMLEventsRs/UIEvent/HostInfo/MajorVersion",
+          "/QBXMLEventsRs/UIEvent/HostInfo/MinorVersion",
+          "/QBXMLEventsRs/UIEvent/HostInfo/ProductName",
+          "/QBXMLEventsRs/UIExtensionEvent",
+          "/QBXMLEventsRs/UIExtensionEvent/CompanyFilePath",
+          "/QBXMLEventsRs/UIExtensionEvent/CurrentWindow",
+          "/QBXMLEventsRs/UIExtensionEvent/CurrentWindow/ListID",
+          "/QBXMLEventsRs/UIExtensionEvent/CurrentWindow/ListType",
+          "/QBXMLEventsRs/UIExtensionEvent/CurrentWindow/TxnID",
+          "/QBXMLEventsRs/UIExtensionEvent/CurrentWindow/TxnType",
+          "/QBXMLEventsRs/UIExtensionEvent/EventTag",
+          "/QBXMLEventsRs/UIExtensionEvent/HostInfo",
+          "/QBXMLEventsRs/UIExtensionEvent/HostInfo/Country",
+          "/QBXMLEventsRs/UIExtensionEvent/HostInfo/MajorVersion",
+          "/QBXMLEventsRs/UIExtensionEvent/HostInfo/MinorVersion",
+          "/QBXMLEventsRs/UIExtensionEvent/HostInfo/ProductName"
+        ]
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 0
+      }
+    },
+    {
+      "operation": "ReceivePaymentAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/receivepaymentadd.html",
+      "sourceSha256": "f8d76108c3e8f6d13c5e6a02d72fb6a3df36679bbea060ac1aeb635a2579f9bc",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ReceivePaymentMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/receivepaymentmod.html",
+      "sourceSha256": "533ed13a185ed58c27e142d92560a008e0a2630ec14e965332406d989f800c27",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ReceivePaymentQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/receivepaymentquery.html",
+      "sourceSha256": "0dbe0131ec354c4cb6fc957174f841b2aec7641668a14ef2d2e8d8b58278b99d",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ReceivePaymentToDepositQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/receivepaymenttodepositquery.html",
+      "sourceSha256": "3e6e513647db3d4725409347ca754929f2e3584b3789acbef9440cd918254727",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "SalesOrderAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salesorderadd.html",
+      "sourceSha256": "ce6b272e14ae310823f0be71abf536f3619c699f25d3ea295e3a1c6bac838d91",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesOrderMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salesordermod.html",
+      "sourceSha256": "e9d6f62ad857a2e2a3a66dc2b61cabbf4d364a725c236b15098784a0b2457752",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesOrderQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salesorderquery.html",
+      "sourceSha256": "05df9da8a8afacbbc3298748347a731cf36c252bac91e29c486fabd9411514d5",
+      "missingPaths": {
+        "request": [],
+        "response": [
+          "/SalesOrderQueryRs/SalesOrderRet/FulfillmentStatus",
+          "/SalesOrderQueryRs/SalesOrderRet/ShippingDetails",
+          "/SalesOrderQueryRs/SalesOrderRet/ShippingDetails/ShippingDetailsLineRet",
+          "/SalesOrderQueryRs/SalesOrderRet/ShippingDetails/ShippingDetailsLineRet/CarrierName",
+          "/SalesOrderQueryRs/SalesOrderRet/ShippingDetails/ShippingDetailsLineRet/ShippingCharges",
+          "/SalesOrderQueryRs/SalesOrderRet/ShippingDetails/ShippingDetailsLineRet/ShippingMethod",
+          "/SalesOrderQueryRs/SalesOrderRet/ShippingDetails/ShippingDetailsLineRet/TrackingID"
+        ]
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "SalesReceiptAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salesreceiptadd.html",
+      "sourceSha256": "e3c1d87ad05dd929010b0f1188e42e2458e723912672aec0a3f325f21bcd0cdb",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesReceiptMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salesreceiptmod.html",
+      "sourceSha256": "396e4ab059ae2ca31d136e39f013010fa483bec06f5ee3376853d7b88bc76d3b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 4,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesReceiptQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salesreceiptquery.html",
+      "sourceSha256": "577357670ea99af3103547e2e02f410011da7c7b0875fc7bef704353c9e60c92",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "SalesRepAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salesrepadd.html",
+      "sourceSha256": "d7d3a276a4f29c9d6c183b9d92b362f39fa59a439a66a66a6485d200d16372e7",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesRepMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salesrepmod.html",
+      "sourceSha256": "e3dd0718010140978973c29eaf76bfae637de869a8c1eca226003c511a04e9dc",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesRepQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salesrepquery.html",
+      "sourceSha256": "dfc7fc175754b6fb71baee33d3d66fde1b366a2710009ee0200071afd76f80dd",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "SalesTaxCodeAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salestaxcodeadd.html",
+      "sourceSha256": "58f2ecd6a97b20e69708c8efd82345b77aff6ecc4069cf665cd4a44db44615b6",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesTaxCodeMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salestaxcodemod.html",
+      "sourceSha256": "739b63446448e1d5916662b372259f941418d01dbad8d243dc9ce40315760c87",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesTaxCodeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salestaxcodequery.html",
+      "sourceSha256": "ab1fdd7123ac5c3aa3c7f8512b3f1acfeecea95761a64d591888c4b1dcc426d2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "SalesTaxPayableQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salestaxpayablequery.html",
+      "sourceSha256": "f066d889491ad3d69619adf26edb15664a10c84d1379e4116f9899c1d6a4341c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "SalesTaxPaymentCheckAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salestaxpaymentcheckadd.html",
+      "sourceSha256": "87b1b8c32c6f5a43541d3cf5b64a9bbc88fc09cce06339d7b07ed46d54f1fc88",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesTaxPaymentCheckMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salestaxpaymentcheckmod.html",
+      "sourceSha256": "81b3af0b2c2a3211e5d9ed89bc724a0941f0ec51712c6353fdb59aea771a27a8",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SalesTaxPaymentCheckQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salestaxpaymentcheckquery.html",
+      "sourceSha256": "1513e853722c879ec689b40e6ba49fc93ed4f485444c844c35623c27e66da357",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "SalesTaxReturnLineQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salestaxreturnlinequery.html",
+      "sourceSha256": "d540e97a1feb56c3f45054dbf75e63851dbf7c7fe0d3d33dfad07e6a12ed0882",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "SalesTaxReturnQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/salestaxreturnquery.html",
+      "sourceSha256": "414a970d0622037f33db5333b741a3cf36b5ba9753112e379a9b9ee448d6c407",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "ShipMethodAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/shipmethodadd.html",
+      "sourceSha256": "f2b70e0f31c9ae13666d32cc85715bd2b2d6be74682cf194e13a3e8fbc07b80c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ShipMethodQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/shipmethodquery.html",
+      "sourceSha256": "5832ab68015bcaea48a4ad5be14f2e011ec0d1072574ebb514a835ed78f2d1af",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "SpecialAccountAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/specialaccountadd.html",
+      "sourceSha256": "534f4feee8392763a67261fbf6f64d3bf0aa67b854d0d54ec6fe6e8e9a51b9e9",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "SpecialItemAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/specialitemadd.html",
+      "sourceSha256": "55ab8f3fd7bd99ce91835f0793f136371d576fa5a95100e5353fd8bc01baeb09",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "StandardTermsAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/standardtermsadd.html",
+      "sourceSha256": "88d63bc535c881b8eddc172b1b5a37331670eac2f3d3e0b1860a5667ba92aa5f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "StandardTermsQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/standardtermsquery.html",
+      "sourceSha256": "c893b223982e30bc18b19e1ac9b0662e1012fca25e47ebbd9923e0ab3465a795",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "SubscriptionDel",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/subscriptiondel.html",
+      "sourceSha256": "fef080f9de791bc1ed28f495e6cb806524934b895fb2f083c356f0bd6400e97b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TemplateQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/templatequery.html",
+      "sourceSha256": "e92af696485d629fd5c3ab76d7c42159c2e929d93dbf865ed324a24e405efcf6",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "TermsQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/termsquery.html",
+      "sourceSha256": "9eaf16dfcdc7395714b21f492f1b0672daefc097c0c9619c7fa0468038e668bf",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "TimeReportQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/timereportquery.html",
+      "sourceSha256": "146be697c32e52e485ddba11e95910030a606d120aba19a6942fa147a960b16d",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 24
+      }
+    },
+    {
+      "operation": "TimeTrackingAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/timetrackingadd.html",
+      "sourceSha256": "eed9023c10224846808c9cbeb4125906cb41c8c903c06643688be2acf559e6db",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TimeTrackingMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/timetrackingmod.html",
+      "sourceSha256": "c57906d38bd22db468cb73017c84c596618ebfaa296038860aa6e428d8e94e06",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TimeTrackingQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/timetrackingquery.html",
+      "sourceSha256": "33f23cbad7415dbb542ad84e02aa42719d6ffbd6ddabf09a342d86c844b893f4",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "ToDoAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/todoadd.html",
+      "sourceSha256": "126ef8c49ccc4d3bd0adaeb76e3a28e96885368c9af5895ea449ab08fa658bf2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ToDoMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/todomod.html",
+      "sourceSha256": "220ddf87a308c408d6cd74911e34c17cbd5a03492e6393eaaf6c1cfa04005baf",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "ToDoQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/todoquery.html",
+      "sourceSha256": "08f92ceebf92c90e84ea5ca9dc1b5e7db142b1d3f2491372188d86493ecc972e",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "TransactionQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/transactionquery.html",
+      "sourceSha256": "03e85324ac45480e5833a80f071c9c64e5ef1ef74f22402eacba0dd63b08c6ec",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "TransferAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/transferadd.html",
+      "sourceSha256": "77f15cc7beefaf9f011f9236baa99de15f74efcf51cecfdf7996e97da2f7cb58",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TransferInventoryAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/transferinventoryadd.html",
+      "sourceSha256": "660a6aa35256d2f34d5275215547ccdf0915166e90269f0ae3459eece3b44a30",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TransferInventoryMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/transferinventorymod.html",
+      "sourceSha256": "9cf011ac581b269d8ea115c08231df6f87dc1723c9d817a4e985e4f8c52ec410",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TransferInventoryQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/transferinventoryquery.html",
+      "sourceSha256": "a3154e5f73250f9efceb0ab19912df0c5fad0dbe0813f0f4c4f35e719eeb292e",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "TransferMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/transfermod.html",
+      "sourceSha256": "501c014d2c090716102802f0681dce51814983d01abb827b2148eed5c91f8209",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TransferQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/transferquery.html",
+      "sourceSha256": "11d6f9584d291c8a8dfea9143bd94f69c1d1ada3976b1d7c9d3b823d45637ca0",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "TxnDel",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/txndel.html",
+      "sourceSha256": "3b9980995f2a0c0fd2e5aadccecf575a558a37c9c6101448bbeee431bfd05d27",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TxnDeletedQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/txndeletedquery.html",
+      "sourceSha256": "02dba8294d29f5a6917401580997526a516d3af730314b0be34a80df82b0d8a5",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "TxnDisplayAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/txndisplayadd.html",
+      "sourceSha256": "dd1dfd4d654c8c49c93ee8163ba35f8069a32c2b98c617e75123b017716d3603",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TxnDisplayMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/txndisplaymod.html",
+      "sourceSha256": "32235ae8a08978f46fda5b038c6a7028696c3e15c2bbddd75ffa5b0ced41445f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "TxnVoid",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/txnvoid.html",
+      "sourceSha256": "d3bf5fa4019b438693b7f246ff8150f34b63e8e88eb20752d7bcc6ec2fa2d95d",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "UIEventSubscriptionAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/uieventsubscriptionadd.html",
+      "sourceSha256": "7103c6cbb27ca1419c35ddfbb28b24dc7957aaddf1110661460ccddaba8449d9",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "UIEventSubscriptionQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/uieventsubscriptionquery.html",
+      "sourceSha256": "baadf92101962a8d8d3195a26a3131f70438e8c63c3d720e9e8e88e3ff6e1fc4",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "UIExtensionSubscriptionAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/uiextensionsubscriptionadd.html",
+      "sourceSha256": "2dc95bb8613e739ac2f48c9c47120619022ab386eea9126aeee2188ba20e674c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "UIExtensionSubscriptionQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/uiextensionsubscriptionquery.html",
+      "sourceSha256": "2aa7bc7d7f9407b73a9fd11300ca5003180b1027e20f7149c16185936fb3e285",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "UnitOfMeasureSetAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/unitofmeasuresetadd.html",
+      "sourceSha256": "85bd0c1d8faf51c2bb4286aab672d5c5788e4451182ca70bebe7fd8cf6613b7f",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "UnitOfMeasureSetQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/unitofmeasuresetquery.html",
+      "sourceSha256": "4caaaa5a50f7425e96b294561e040e9a065ad2f81cd3bcf0c18bf9f332386b23",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "VehicleAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vehicleadd.html",
+      "sourceSha256": "c772ca48c4a5eb6da5bb842615fade0109a0ade7d252ab2df6cf469d1dc81868",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "VehicleMileageAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vehiclemileageadd.html",
+      "sourceSha256": "3787979185f3aa1d4444ede68149837e96bd033f8af0810c87d88d4b647c9f90",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 3
+      }
+    },
+    {
+      "operation": "VehicleMileageQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vehiclemileagequery.html",
+      "sourceSha256": "ea19c1890526e14c95adacd5fb56ee60f63b288faedf559bc1d8e16a854755f2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "VehicleMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vehiclemod.html",
+      "sourceSha256": "5f2b391bdf0f0c35cc7fef1ce61da2bb63b86d8f3604f95e89760c42448ff926",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "VehicleQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vehiclequery.html",
+      "sourceSha256": "0264a47bb0e93e4b46fa8891ba86dbb2d1bca08b55c7136ab0c8fc29119055f2",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "VendorAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vendoradd.html",
+      "sourceSha256": "69da9281dcad8369e52b340422f080a69168df302f8192c6f2f2609527a0562b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "VendorCreditAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vendorcreditadd.html",
+      "sourceSha256": "636d15abf0b52d7a36dc31ebeca854cc2d183df3f52a77c8122366b0a1ce5abf",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 2,
+        "response": 3
+      }
+    },
+    {
+      "operation": "VendorCreditMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vendorcreditmod.html",
+      "sourceSha256": "a9c073f8750fa3b017fed5e98d1236e1b6b6aa6be7f536d772226c8429ba5de0",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "VendorCreditQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vendorcreditquery.html",
+      "sourceSha256": "38d341775989da1b275773a0800dfb1edf5a2aad8590f22c4892a05dc17f7b75",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "VendorMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vendormod.html",
+      "sourceSha256": "0fb01a1e1e20c9d0deb3ad1fdc3dbc26ccb66956e80f9184c8ff1070ee7f24c7",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "VendorQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vendorquery.html",
+      "sourceSha256": "2824a9f28f6149dbc1c65c460d0bd15258d1b812f5b0ddaa2bd1c59c05135a48",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 3,
+        "response": 6
+      }
+    },
+    {
+      "operation": "VendorTypeAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vendortypeadd.html",
+      "sourceSha256": "db751b5df0417bb521001ebcc51e7bcfba3e99f89f63b424a7af3d55bd5a187b",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "VendorTypeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/vendortypequery.html",
+      "sourceSha256": "8dbb231374ab7ae50a2e8f65bfd308b1c9d2627f8ee8c6ab52229f402093fbf4",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    },
+    {
+      "operation": "WorkersCompCodeAdd",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/workerscompcodeadd.html",
+      "sourceSha256": "4d4de392676473281df8990280866b5c6010aa0b100e774b60ea4558fb77f12a",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "WorkersCompCodeMod",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/workerscompcodemod.html",
+      "sourceSha256": "313f2c754580d06b9c303b2e9a59ad3a9e4b566b0ca4fa601186b9088a2af49c",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 0,
+        "response": 3
+      }
+    },
+    {
+      "operation": "WorkersCompCodeQuery",
+      "state": "compared",
+      "url": "https://static.developer.intuit.com/output_html/qbdesktop/docs/api-reference/qbdesktop/workerscompcodequery.html",
+      "sourceSha256": "2cb461f33d6f2a9227f7038a767f846057ac8b44f758c1acc3d9dd9d796a207e",
+      "missingPaths": {
+        "request": [],
+        "response": []
+      },
+      "missingAttributes": {
+        "request": [],
+        "response": []
+      },
+      "comparedAttributeCount": {
+        "request": 1,
+        "response": 4
+      }
+    }
+  ]
+}

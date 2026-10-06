@@ -1,0 +1,11 @@
+{
+  "retrieved": "2026-10-05",
+  "scope": "XML example types and explicit required/repetition comments only; conditional choice semantics, numeric bounds, max lengths and country/version evidence need separate review. Differences do not automatically change executable validation.",
+  "comparedFacts": {
+    "types": 24468,
+    "requiredFlags": 22576,
+    "repeatFlags": 22576
+  },
+  "differences": [],
+  "unparsed": []
+}
