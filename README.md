@@ -1,20 +1,28 @@
 # qbcli by McMurry Software
 
-Keep QuickBooks. Make it scriptable.
+qbcli is a Windows command-line tool that reads and edits data in QuickBooks Desktop. You can run it from PowerShell, a script, or a local AI agent such as Codex. It sends typed qbXML requests through the Intuit request processor installed with QuickBooks Desktop and returns structured results. QuickBooks handles company-file access and authorization.
 
-**Developed by McMurry Software. Not developed, sponsored, or endorsed by Intuit. McMurry Software is not affiliated with Intuit.**
+- Read company information, accounts, customers, vendors, invoices, bills, transactions and financial reports.
+- Discover supported commands and SDK fields offline with `capabilities` and `sdk schema OPERATION`.
+- Preview typed edits, then explicitly apply authorized changes to a specified company file. The CLI supports individual operations, batches, execution journals, bulk reclassification and event tooling.
 
-Independent command-line SDK tool for QuickBooks Desktop on Windows. The executable is `qbcli`. It is useful from PowerShell and automation without requiring AI.
+Developed by McMurry Software as an independent project with no Intuit affiliation, sponsorship or endorsement. QuickBooks and the Intuit SDK remain subject to their own terms.
 
-Implemented: comprehensive offline capability discovery, typed SDK schema/validation/execution, bounded multi-request batches with durable journals and linked SDK macros, selective journal resume, iterator pagination, bulk expense/journal/deposit and opt-in service/non-inventory/other-charge/inventory revenue sales line reclassification, a COM event receiver, and company/account/customer/vendor reads, invoice/bill summaries, transaction history/memo search and financial reports. Service/non-inventory/other-charge leaves require one actual posting; inventory requires confirmed item/account types and exactly three income/asset/COGS postings. COGS/asset account class selection remains unsupported. Normalized summary/report handlers have automated coverage and fresh independent SDK comparisons on Test.QBW. Verification remains scoped to the tested fields, fixtures and release. No MCP server is implemented.
+## License and support
 
-**Status:** 231 company-operation schemas and seven subscription schemas through qbXML 13.0, plus selected documented SDK14/16 fields; protocols up to17.0 are accepted for known fields. This is not complete SDK17 coverage. Live tests on QuickBooks Accountant Desktop Plus 2024 R21 accepted 204 distinct operations, including query smoke probes, synthetic add/modify/delete/void/merge requests and all seven subscription operations. Smoke acceptance does not verify every field or lifecycle. Capability output records exact test outcomes and limitations. Actual QuickBooks event delivery after a new company-open cycle, unattended operation with QuickBooks shut down, multi-user operation, other countries and other releases remain untested.
+Use qbcli at your own risk. McMurry Software provides it as-is under the [MIT License](LICENSE), without warranty. You’re welcome to fork it and maintain your own copy. This is a side project. Expect occasional updates at most and no commitment to support, fixes, or compatibility with future QuickBooks releases.
 
-Bulk purchase selection now includes service/non-inventory/other-charge item lines in the six default purchase types. Item and expense classes share one modifier per transaction, with complete retained flat/group lists and fresh form/posting verification. Billable customer fields on flat purchase item/expense lines have scoped preservation evidence. Flat purchase inventory has scoped explicit/public preservation coverage. PO links, already-billed allocations and billable group children still need successful lifecycle coverage.
+Start with a restored backup or a fictional test company. Open it in licensed QuickBooks Desktop as the company administrator and review the integrated application prompt for **McMurry Software QuickBooks CLI**. The existing authorization profile requests read/write, personal-data and unattended permissions even for queries. Confirm the restored company using an explicit `--company-file` path and read commands such as `company info` and `accounts list`. Before applying an edit, review the preview, confirm the target company, and keep the execution journal private. Applied batches can partially succeed.
+
+If you use Codex, give it the local path to `qbcli.exe` and the verified company-file path. Ask it to preview each proposed edit and wait for your approval before passing `--apply`. QuickBooks authorization happens interactively in QuickBooks.
+
+## Compatibility
+
+The best-tested host is U.S. QuickBooks Accountant Desktop Plus 2024 R21 on Windows x64. The CLI knows 231 company-operation schemas and seven subscription schemas through qbXML 13.0, with selected later fields. The catalog records which operations and fields have test evidence. Other QuickBooks releases and regions, unattended sessions and automatic event callback launch require separate validation.
 
 ## Run
 
-For another Windows machine, start with [test PC setup](docs/test-pc.md). Build from source with the pinned .NET SDK, or download the complete Windows x64 ZIP from this private repository's Releases. The ZIP includes the .NET runtime; QuickBooks Desktop and its registered request processor are still required locally. See [CSV import preparation](docs/csv-import.md) for tomorrow's import workflow.
+For another Windows machine, start with [test PC setup](docs/test-pc.md). Build from source with the pinned .NET SDK, or download the complete Windows x64 ZIP from this repository’s [Releases](https://github.com/rrmcmurry/qbcli/releases). The ZIP includes the .NET runtime; QuickBooks Desktop and its registered request processor are still required locally. See [CSV import preparation](docs/csv-import.md) for the import workflow.
 
 From the repository root in PowerShell:
 
